@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/home.css">
+
+</head>
+<style>
+   
+   a{
+        text-decoration: none;
+        color: white;
+    }
+    .welcome-container {
+        height: 300px;
+        gap: 0px    ;
+    }
+    .welcome-container .button p{
+        font-size: 18px;
+    }
+</style>
+<body>
+    <menu>
+        <div class="menu-container">
+            <img src="images/logo/logo.png" alt="" srcset="">
+            <ul>
+
+                <ul>
+                    <li onclick="window.location.href='index.html'">Home</li>
+                    <li onclick="window.location.href='about.html'">About</li>
+                    <li class="services-link">Services</li>
+              <!--       <ul class="service-list">
+                        <li onclick="window.location.href='goldloan.html'">Gold Loan</li>
+                        <li onclick="window.location.href='businessloan.html'">Business Loan</li>
+                        <li onclick="window.location.href='cdloan.html'">CD Loan</li>
+                        <li onclick="window.location.href='vehicle.html'">Vehicle Loan</li>
+                    </ul> -->
+                    <li onclick="window.location.href='investor.html'">Investors</li>
+                    <li onclick="window.location.href='onlineserives.html'">Online Services</li>
+                    <li onclick="window.location.href='policies.html'">Policies</li>
+                    <li onclick="window.location.href='career.html'">Career</li>
+                    <li onclick="window.location.href='csr.html'">CSR</li>
+                    <li onclick="window.location.href='contact.html'">Contact Us</li>
+                </ul>
+
+            </ul>
+        </div>
+    </menu>
+
+    <section class="welcome-container"
+        style="background-image: url(images/welcome/investors.jpg);">
+        <h1 >Online Services
+            </h1><!--    <p id="sub">Experience Door Step Gold Loan Services</p>  -->
+    <div class="button">
+        <p><a href="/index.html">Home</a> - Online Services</p>
+     </div>
+
+    </section>
+
+    <!-- Online Services Cards Section -->
+    <section class="services-cards-section">
+        <div class="services-cards-grid">
+            <div class="service-card">
+                <div class="service-icon">💳</div>
+                <h2>Pay Online</h2>
+                <p>Secure online payments for loans and services</p>
+                <a href="#" class="service-btn">Pay Now</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏅</div>
+                <h2>Gold Over Draft</h2>
+                <p>Instant funds against gold assets</p>
+                <a href="#" class="service-btn">Apply</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📝</div>
+                <h2>Submit 15G/H</h2>
+                <p>Online tax declaration forms</p>
+                <a href="#" class="service-btn">Submit</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">❌</div>
+                <h2>NACH Cancelation</h2>
+                <p>Manage NACH mandates</p>
+                <a href="#" class="service-btn">Cancel</a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+    .services-cards-section {
+        padding: 48px 0 32px 0;
+        background: #f4f6fb;
+    }
+    .services-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 32px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+    .service-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+        padding: 36px 24px 32px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 340px;
+        transition: transform 0.18s, box-shadow 0.18s;
+        text-align: center;
+        position: relative;
+    }
+    .service-card:hover {
+        transform: translateY(-6px) scale(1.025);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+    .service-icon {
+        font-size: 52px;
+        margin-bottom: 22px;
+    }
+    .service-card h2 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+        color: #1a2340;
+        font-weight: 600;
+    }
+    .service-card p {
+        font-size: 1.05rem;
+        color: #4a5568;
+        margin-bottom: 24px;
+        flex: 1;
+    }
+    .service-btn {
+        display: inline-block;
+        padding: 10px 28px;
+        background: #044697;
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+        transition: background 0.18s, box-shadow 0.18s;
+    }
+    .service-btn:hover {
+        background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+        box-shadow: 0 4px 16px rgba(0,123,255,0.13);
+    }
+    @media (max-width: 700px) {
+        .services-cards-grid {
+            grid-template-columns: 1fr;
+            gap: 22px;
+        }
+        .service-card {
+            min-height: 0;
+        }
+    }
+    </style>
+
+    <footer class="footer-section">
+        <div class="container">
+            <!-- <div class="footer-cta pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="cta-text">
+                                    <h4>Find us</h4>
+                                    <span>  Aswini Junction, Thiruvambady-PO, Thrissur, Kerala-680022</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-phone"></i>
+                                <div class="cta-text">
+                                    <h4>Call us</h4>
+                                    <span>9876543210 0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="far fa-envelope-open"></i>
+                                <div class="cta-text">
+                                    <h4>Mail us</h4>
+                                    <span>mail@info.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget" style="padding: 20px;">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="images/logo.jpg" class="img-fluid" alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>To emerge as the most trusted financial solution provider in India, with special
+                                    focus on emerging segments of society, through a nationwide, efficient and service
+                                    oriented network..</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="https://www.facebook.com/share/18qcUVv3fJ/?mibextid=wwXIfr" target="_blank"
+                                    style="background-color: white;"><img src="images/icon/facebook.png" alt=""
+                                        srcset=""></a>
+                                <a href="https://www.instagram.com/yogloansfinance?igsh=djhqZGI0dG92bGI0"
+                                    target="_blank"><img src="images/icon/social-media.png" alt="" srcset=""></a>
+                                <a href="https://www.linkedin.com/company/yogloans"><img
+                                        src="images/icon/linkedin-logo.png" alt="" srcset=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li> <a href="about.html">About Us</a></li>
+
+                                <li> <a href="investors.html">Investors</a></li>
+                                <li> <a href="online-services.html">Online Services</a></li>
+                                <li> <a href="policies.html">Policies</a></li>
+                                <li> <a href="csr.html">CSR</a></li>
+                                <li><a href="career.html">Career</a></li>
+                                <li> <a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Email Address">
+                                    <button><img src="images/icon/send.png" alt="" srcset=""></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>2025 YOGAKSHEMAM LOANS Ltd. All rights reserved. </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="loans.html">Gold Loan</a></li>
+                                <li><a href="vehicle.html">Vehicle Loan</a></li>
+                                <li><a href="personal.html">Business Loan</a></li>
+                                <li><a href="cd.html">CD Loan</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

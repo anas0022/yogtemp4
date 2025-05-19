@@ -7,8 +7,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Add Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <style>
+    *{
+        color: black;
+    }
      .welcome-container {
         height: 300px;
         gap: 0px    ;
@@ -16,12 +35,695 @@
     .welcome-container .button p{
         font-size: 18px;
     }
-    a{
+      a{
         text-decoration: none;
         color: white;
     }
+    .list-doc{
+        width: 100%;
+        display: flex;
+        height: auto;
+        background-color:whitesmoke ;
+     margin-top: 10px;
+     margin-bottom: 10px;
+    }
+    .list-doc ul{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 15px;
+        gap: 5px   ;
+        background-color: white;
+    /*     background-color: whitesmoke; */
+    }
+    .list-doc ul li{
+        width: 100%;
+        box-shadow: 0px 0px 2px 0px gray;
+        padding: 10px;
+    }
+    .list-doc ul li.active{
+        background-color: #044697;
+        color: white;
+    }
+    .list-doc .other{
+        width: 70%;
+  /*       background-color: whitesmoke; */
+        height: 100%;
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .other .annual-report-content{
+        width: 100%;
+        display: grid;
+grid-template-columns: repeat(4, 1fr);
+       /*  height: 100%; */
+        justify-content: center;
+        align-items: center;
+        gap: 10px   ;
+  
+    }
+    .annual-report-content .reports{
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 2px 0px gray;
+        color: black;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .reports .img img{
+        width: 35px;
+        height: 35px;
+    }
+    .detail p{
+        color: black;
+        width: 180px;
+       
+        text-align: center;
+    }
+    
+.customer-content{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee8e8;
+}
+
+.customer-content p:nth-child(1){
+
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap:
+10px;
+  color: black;
+ /*  text-transform: uppercase; */
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+/* .customer-content p span{
+width: 40px;
+  border-bottom:
+2px solid black;
+} */
+
+.customer-contentt h2{
+font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 10px;}
+
+.read-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #B70000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+.read-more-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+.read-more-btn:hover::after {
+    width: 200px;
+    height: 200px;
+}
+.read-more-btn:hover {
+    background-color: #B70000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(154, 6, 6, 0.3);
+}
+.read-more-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(154, 6, 6, 0.2);
+}
+.sec1{
+    width: 50%;
+  }
+  .customer-testimonial{
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+.customer-testimonial .sec1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.customer-testimonial .sec1 p {
+    color: #B70000;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+.customer-testimonial .sec1 h2 {
+    color: #1a1a1a;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 0;
+   
+    
+}
+
+#owl-demo1 {
+    padding: 0 20px;
+}
+
+.blog-allof {
+    background: #fff;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+   /*  border-right:2px solid black ;
+    border-left: 2px solid black; */
+}
+
+.blog-allof::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+/*     background: linear-gradient(90deg, #B70000, #710505); */
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.blog-allof:hover::before {
+    transform: scaleX(1);
+}
+
+.blog-allof:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(154, 6, 6, 0.1);
+}
+
+.img-date {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.img-date img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 20px;
+    background: rgba(154, 6, 6, 0.03);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    border: 2px solid rgba(154, 6, 6, 0.1);
+}
+
+.blog-allof:hover .img-date img {
+    background: rgba(154, 6, 6, 0.05);
+    transform: scale(1.1);
+    border-color: rgba(154, 6, 6, 0.2);
+}
+
+.discretion-blog h3 {
+    color: #1a1a1a;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.blog-allof:hover .discretion-blog h3 {
+    color: #9a0606;
+}
+
+.discretion-blog p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.owl-carousel .owl-nav {
+    position: absolute;
+    top: -80px;
+    right: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.owl-carousel .owl-nav button {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: 2px solid rgba(154, 6, 6, 0.1);
+    border-radius: 50%;
+    color: #9a0606;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.owl-carousel .owl-nav button:hover {
+    background: #9a0606;
+    color: #fff;
+    border-color: #9a0606;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(154, 6, 6, 0.2);
+}
+
+.owl-carousel .owl-dots {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.owl-carousel .owl-dots .owl-dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(154, 6, 6, 0.1);
+    border-radius: 50%;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+.owl-carousel .owl-dots .owl-dot.active {
+    background: #044697;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(154, 6, 6, 0.3);
+}
+#message{
+    font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.8;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient:
+vertical;
+  overflow:
+hidden;
+  text-overflow: ellipsis;
+  transition:
+all 0.5s ease;
+  padding-right: 10px;
+  text-transform: capitalize;
+}
+.achivements{
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.achivements .count{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px   ;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #9a0606;
+    z-index: 3000;
+}
+
+.achivements .text{
+    color: #9a0606;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px   ;
+    font-size: 1.2rem;
+}
+.items{
+    border-right: 2px solid rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 23%;
+    z-index: 300;
+}
+#director{
+    background-color: red;
+    height: 300px;
+    background-image: url(ramachandran.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    padding: 0px;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+#director .name{
+    width: 80%;
+    padding: 10px;
+    background-color: #044697;
+    /* color: white; */
+}
+ #director .name p{
+    color: white;
+}
+
+#director .view {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* #director .view:hover {
+    background: #B70000;
+    transform: scale(1.1);
+}
+ */
+#director .view i {
+    color: #000000;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #044697;
+}
+.modal-title {
+    color: #044697;
+    font-weight: 600;
+}
+.director-info h4 {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+.director-info p {
+    color: #666;
+    line-height: 1.6;
+}
+.modal-body {
+    padding: 20px;
+}
+.img-fluid.rounded {
+    border: 2px solid #044697;
+    padding: 5px;
+}
+
+.instagram-modal {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.instagram-header {
+    background: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 15px 20px;
+}
+
+.director-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #044697;
+    padding: 2px;
+}
+
+.instagram-header h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #262626;
+    margin: 0;
+}
+
+.instagram-header p {
+    font-size: 14px;
+    color: #8e8e8e;
+    margin: 0;
+}
+
+.instagram-body {
+    padding: 20px;
+    background: #fafafa;
+}
+
+.director-bio {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.director-bio p {
+    color: #262626;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.instagram-footer {
+    background: #fff;
+    border-top: 1px solid #dbdbdb;
+    padding: 15px 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #262626;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #044697;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-close {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+.big-para{
+    width: 50%;
+}
+
+.credit-rating{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding:20px;
+    background-color: #dbd4d423;
+}
+.credit-rating-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+.credit-rating-content h3{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000;
+}
+.credit-rating-content .body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap:20px;
+    justify-content: start;
+    align-items: center;
+    margin-top: 20px;
+}
+.credit-rating-content .body .card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    height:180px;
+    width:450px;
+}
+.credit-rating-content .body .card .image{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.credit-rating-content .body .card .content{
+width: 100%;
+    height: 30%;
+    display: flex;
+ /*    flex-direction: column; */
+    justify-content:center;
+    align-items: center;
+    gap: 5rem;
+}
+.content p:nth-child(1){
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    width: 100%;
+    text-transform:lowercase;
+    padding: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.content p:nth-child(2){
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    width: 100%;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 </style>
 <body>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Update the modal structure -->
+    <div class="modal fade" id="directorModal" tabindex="-1" aria-labelledby="directorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content instagram-modal">
+                <div class="modal-header instagram-header">
+                    <div class="d-flex align-items-center">
+                        <img src="" alt="" id="modalDirectorImage" class="director-avatar">
+                        <div class="ms-3">
+                            <h5 id="modalDirectorName" class="mb-0"></h5>
+                            <p id="modalDirectorPosition" class="text-muted mb-0"></p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body instagram-body">
+                    <div class="director-bio">
+                        <p id="modalDirectorBio"></p>
+                    </div>
+                </div>
+                <div class="modal-footer instagram-footer">
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18qcUVv3fJ/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/yogloansfinance?igsh=djhqZGI0dG92bGI0" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/yogloans" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                     
+                    </div>
+    
+    
+    
+                </div>
+            </div>
+        </div>
+    </div>
     <menu>
         <div class="menu-container">
             <img src="images/logo/logo.png" alt="" srcset="">
@@ -51,15 +753,424 @@
 
     <section class="welcome-container"
         style="background-image: url(images/welcome/investors.jpg);">
-        <h1 id="header">Investors</h1>
-    <!--     <p id="sub">Experience Door Step Gold Loan Services</p> -->
+        <h1 >Investors
+            </h1><!--    <p id="sub">Experience Door Step Gold Loan Services</p>  -->
     <div class="button">
         <p><a href="/index.html">Home</a> - About Us</p>
-     </div>
+     </div>>
 
     </section>
+<div class="list-doc">
+    <ul>
+        <li class="active">Annual Reports</li>
+        <li>Announcements</li>
+        <li>Investor Contact</li>
+        <li>Public Disclosure</li>
+        <li>Forms for TDS on Dividend</li>
+        <li>Unpaid Dividend</li>
+        <li>Appointment Order of Independent Directors
+        </li>
+        <li>Digital Lending Partners</li>
+    </ul>
+    <div class="other">
+        
+            <div class="annual-report-content">
+                
+                <div class="reports" onclick="window.open('report23-24.html', '_blank')">
 
-    
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            2023 - 2024
+                        </p>
+                    </div>
+                </div>
+
+                
+<div class="reports" onclick="window.open('report22-21.html', '_blank')">
+
+<div class="img">
+<img src="images/icon/pdf.png" alt="PDF Icon">
+</div>
+<div class="detail">
+<p>
+    2022 - 2023
+</p>
+</div>
+</div>
+<div class="reports" onclick="window.open('report21-20.html', '_blank')">
+<div class="img">
+    <img src="images/icon/pdf.png" alt="PDF Icon">
+</div>
+<div class="detail">
+<p>
+    2021 - 2022
+</p>
+</div>
+</div>
+<div class="reports" onclick="window.open('report20-21.html', '_blank')">
+<div class="img">
+    <img src="images/icon/pdf.png" alt="PDF Icon">
+</div>
+<div class="detail">
+<p>
+    2020 - 2021
+</p>
+</div>
+</div>
+<div class="reports" onclick="window.open('report17-18.html', '_blank')">
+<div class="img">
+    <img src="images/icon/pdf.png" alt="PDF Icon">
+</div>
+<div class="detail">
+<p>
+    2017 - 2018
+</p>
+</div>
+</div>
+<div class="reports" onclick="window.open('report16-17.html', '_blank')">
+<div class="img">
+    <img src="images/icon/pdf.png" alt="PDF Icon">
+</div>
+<div class="detail">
+<p>
+    2016 - 2017
+</p>
+</div>
+</div>
+<div class="reports" onclick="window.open('report15-16.html', '_blank')">
+<div class="img">
+    <img src="images/icon/pdf.png" alt="PDF Icon">
+</div>
+<div class="detail">
+<p>
+    2015 - 2016
+</p>
+</div>
+</div>
+<div class="reports" onclick="window.open('report14-15.html', '_blank')">
+<div class="img">
+    <img src="images/icon/pdf.png" alt="PDF Icon">
+</div>
+<div class="detail">
+<p>
+    2014 - 2015
+</p>
+</div>
+</div>
+                </div>
+    </div>
+</div>
+<div class="customer-content" style="position: relative; flex-direction: column; background-color: white;  align-items: start; margin-top: 50px;">
+    <div class="sec1" style="position: relative; justify-content: start;">
+        <p style="color: #044697;">Board Of Directors <span></span></p>
+        <h2>Meet Our Directors</h2>
+    </div>
+ 
+    <div id="owl-demo2" class="owl-carousel">
+        <div class="allitem">
+            <div class="blog-allof" style="border: none ; background-image: url(images/directors/ramachandran.jpg);" id="director" >
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                      Ramachandran Ottapathu
+                    </p>
+                    <p>
+                        Chairman 
+                    </p>
+                </div>
+            </div>
+           <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>Sarah</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        The loan process was smooth and quick. Very professional service!
+                    </p>
+                </div>
+            </div> -->
+        </div>
+        <div class="allitem">
+             <div class="blog-allof" style="border: none; background-image: url(images/directors/unnikrishnan.jpg);" id="director" >
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        Unnikrishnan I
+                    </p>
+                    <p>
+                        Managing Director 
+                    </p>
+                </div>
+                </div>
+            <!-- <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>Michael</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        Excellent customer support and transparent process. Highly recommended!
+                    </p>
+                </div>
+            </div> -->
+        </div>
+        <div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/santosh.jpg);" id="director">
+                <div class="view">
+                    <i class="fas fa-eye" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        Santosh Kurup
+                    </p>
+                    <p>
+                        Independent Director 
+                    </p>
+                </div>
+                </div>
+           <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>Emma</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        Got my loan approved within 24 hours. Amazing experience!
+                    </p>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/vijayan.jpg);" id="director" >
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        N D Vijayan
+                    </p>
+                    <p>
+                        Non-Executive Director 
+                    </p>
+                </div>
+                </div>
+           <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>David</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        The interest rates are very competitive. Will definitely use again!
+                    </p>
+                </div>
+            </div> -->
+        </div>
+<div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/unnirajan.jpg);" id="director" >
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        P.N.Unnirajan
+                    </p>
+                    <p>
+                        Non-Executive Director 
+                    </p>
+                </div>
+                </div>
+           <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>David</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        The interest rates are very competitive. Will definitely use again!
+                    </p>
+                </div>
+            </div> -->
+        </div>
+        <div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/Mohandas.jpg);" id="director" >
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        Mohandas Anchery
+                    </p>
+                    <p>
+                        Independent Director 
+                    </p>
+                </div>
+                </div>
+           <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>David</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        The interest rates are very competitive. Will definitely use again!
+                    </p>
+                </div>
+            </div> -->
+        </div>
+        <div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/Silpa.jpg);" id="director" >
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        Silpa Ramdas
+                    </p>
+                    <p>
+                        Independent Director 
+                    </p>
+                </div>
+                </div>
+           <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>David</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        The interest rates are very competitive. Will definitely use again!
+                    </p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="customer-content" style="position: relative; flex-direction: column; background-color: white;  align-items: start; margin-top: 50px;">
+    <div class="sec1" style="position: relative; justify-content: start;">
+        <p style="color: #044697;">Senior Management Team <span></span></p>
+        <h2>Meet Our Leadership</h2>
+    </div>
+ 
+    <div id="owl-demo3" class="owl-carousel">
+        <div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/Rajeshkumar.jpg);" id="director">
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        Rajeshkumar.K
+                    </p>
+                    <p>
+                        EVP & Company Secretary 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/Sreenivas.jpg);" id="director">
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        K.K.Sreenivas 
+                    </p>
+                    <p>
+                        VP-Credit & Branch Operations 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/prasad.jpg);" id="director">
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        Prasad.P
+                    </p>
+                    <p>
+                        Chief Financial Officer 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/Shaju.jpg);" id="director">
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        Shaju K Balan
+                    </p>
+                    <p>
+                        Assistant Vice President -
+                        Business Development
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="allitem">
+            <div class="blog-allof" style="border: none; background-image: url(images/directors/rakesh.jpg);" id="director">
+                <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="name" >
+                    <p>
+                        Rakesh K Venugopal
+                    </p>
+                    <p>
+                        Assistant Vice President -
+                        Business Head - Two-Wheeler
+                        Loans
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="credit-rating">
+    <div class="credit-rating-content">
+        <div class="header">
+            <h3>Credit Rating & NBFC Registration</h3>
+        </div>
+     <div class="body">
+        <div class="card">
+            <div class="image">
+                <img src="images/crisil.jpg" alt="" srcset="">
+            </div>
+            <div class="content">
+                <p style="text-transform: capitalize; color: black;">Rating </p>
+                <p style="text-transform: uppercase; color: black;">BBB ( - )</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image">
+                <img src="images/rbi.jpg" alt="" srcset="">
+            </div>
+            <div class="content">
+                <p style="color: black;">WE HAVE BEEN REGISTERED AS NBFC WITH RBI SINCE 2000</p>
+            <!--     <p>BBB ( - )</p> -->
+            </div>
+        </div>
+     </div>
+     
+</div>
+</div> 
     <footer class="footer-section">
         <div class="container">
             <!-- <div class="footer-cta pt-5 pb-5">
@@ -178,7 +1289,118 @@
         </div>
     </footer>
 
+ <script>
+    
+    var owl2 = $("#owl-demo2");
+        owl2.owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            smartSpeed: 800,
+            responsive: {
+                0: {
+                    items: 1,
+                    margin: 15
+                },
+                600: {
+                    items: 2,
+                    margin: 20
+                },
+                1000: {
+                    items: 3,
+                    margin: 20
+                }
+            }
+        });
 
+        var owl3 = $("#owl-demo3");
+        owl3.owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            smartSpeed: 800,
+            responsive: {
+                0: {
+                    items: 1,
+                    margin: 15
+                },
+                600: {
+                    items: 2,
+                    margin: 20
+                },
+                1000: {
+                    items: 3,
+                    margin: 20
+                }
+            }
+        });
+        
+
+        // Director bios
+        const bio = {
+            'Ramachandran Ottapathu': "Mr. Ramachandran Ottapathu is a Chartered Accountant and a fellow member of ICAI, an Associate member of Botswana Institute of Accountants, and a certified SAP consultant. He has about 25 years of vast experience in the retail industry - handling both finance and operations. He is also an expert in areas such as Manufacturing, Packaging, Milling, and Medical distribution. He is presently serving as the Chief Executive Officer of Choppies Enterprises Ltd., a retail chain headquartered at Gaborone, Botswana, and has 246 stores spread across Botswana, South Africa, Zambia, Zimbabwe, Namibia, and Mozambique. Choppies Enterprises Ltd. is listed on the Botswana Stock Exchange and has a secondary listing on the Johannesburg Stock Exchange, Africa's biggest Stock Exchange. This company has bagged a turnover of about $ 1 Billion and is one of the biggest retailers in the continent. He has more than 50 business enterprises under his stewardship and was featured in Forbes Magazine (Forbes - Africa edition Mar 16). ",
+            'Unnikrishnan I': "A fellow member of The Institute of Chartered Accountants of India (ICAI) Mr. Unnikrishnan served on the board of Manappuram Finance Limited for 18 years starting 1997 and was one of the core team members who built that organization. He exited from the company in November 2014 as the Dy.CEO to join Yogakshemam. With a whopping 30 years of experience in advising and managing NBFCs, he is credited with bringing the highest amount of FDI into the State of Kerala in a single tranche to the extent of Rs 1000 crores. He has also raised not less than Rs 30000 cores on a cumulative basis as working capital limits from various banks and financial institutions. He has written numerous articles and presented papers on NBFCs, financial inclusions, etc. on various forums, served on the Executive committee of the 'Finance Companies Association' and is one of the founding members of the 'Association of Gold Loan Companies India'. ",
+            'Santosh Kurup':" Mr.Santosh Kurup is a CAIIB from the Indian Institute of Bankers. He is a graduate in BA Economics (Hons.) from St.Stephen's College and pursued his Post Graduation in M.A from Delhi School of Economics and MBA from prestigious Stern School of Bussiness,New York University. He has got 3 decades of expertise in Banking, Asset management and Non- Banking Finance. With his rich and vast experience in corporate development and financial sector he has acted in various capacities in India and abroad. He has served RBI, Mumbai as Assistant General Manager from 1981 to 93. He was The Vice President of Emerging Markets,JP Morgan based in New York from 1993 to 1996, acted as Director of Emerging Markets, Old Mutual Plc. London and Mumbai from 1996 to 2002,worked as an Independent Consultant in India and UK for Edelweiss Bank Project, Edelweiss Financial Services and Pipal Research Corporation.Besides serving our board he is also the Director and substantial shareholder of M/s Kurup Services Pvt. Ltd., He is a reg ular blogger on Financial Market Research at www.santoshkurup.bIogspot.com. He has also shown his interest as a lecturer in economics at St. Stephen's College, University of Delhi from 1979 to 1981.",
+            'N D Vijayan': "Mr. ND Vijayan is a Graduate in commerce with Diplomain Computer Application. Started his career in the year 1979 with Bank of Baroda, Abu Dhabi. Having served in various posts, ended the services with the organization as Current Account Manager in 1982 and joined with Arab Bank for Investment and Foreign Trade in 1983. He worked in the supervisory roles of almost again stall the internal departments during the course of service. With more than 30 odd years of service, took VRSin2011 asOperations-in-charge of IT department with an option to rejoin but decided not to. ",
+            'P.N.Unnirajan': "Sri.PoiyakuIeth Nelambaran Unnirajan IPS (Rtd.)is a post graduate in history.He retired from the Kerala Police on superannuation on 30th June 2018 while working as the Superintendent of Police, Crime Branch CID Ernakulum range. He was inducted as a Sub- Inspector in Kerala Police in 1981. He was promoted as Circle Inspector of Police in 1994 and promoted as DYSP in 2001 and Superintendent of Police on March 2010. He has served as the Assistant Director, Kerala Police Academy, Thrissur, Superintendent of Police, Special Branch, Thrissur Range, Superintended Internal security (Intelligence) Thiruvanathapuram and held several responsible posts. He was also awarded with the PRESIDENTS POLICEMEDAL FOR MERITORIOUS SERVICE during the year 2017. He had compIetedhisP.G in Criminology and Police administration. ",
+            'Mohandas Anchery': "Mr. Mohandas Anchery is Fellow member of the Institute of Chartered Accountants of India. He has become a Chartered Accountant in 1985 and since then he has built up a successful track record of more than 39 years as a Practicing Chartered Accountant with his expertise spanning in the field of accounting, finance, management, taxation and NBFC regulations. He is the Managing Partner of Mohandas & Associates, Chartered Accountants Thrissur. He has been associated with the financial service sector in various capacities like audit of Banks, NBFCs, Nidhi companies, Chits and Kuries in the capacity of auditor as well as advisor. ",
+            'Silpa Ramdas': "Ms.Silpa Ramdas is a Fellow member of the Institute of Chartered Accountants of India. Currently she is the partner of M/s. Ramdas and Venugopal, Chartered Accountants, Thrissur. She has become a member of the Institute in 2002 and started her career as a practicing Chartered Accountant in the year 2003 at Thrissur. She has been building her career successfully since then and gained a reputation of her own in the field. Her areas of practice includes audit functions of Nationalised and Private banks, NBFCs, Chit and Kuri companies. "
+        };
+
+        // Senior Management bios
+        const managementBio = {
+            'Rajeshkumar.K': 'He is a graduate in commerce and fellow member of the Institute of Company Secretaries of India. He also holds a diploma in mediation from Indian Institute of Arbitration and Mediation and obtained the membership of the Chartered Institute of Arbitrators, London. He has industrial experience of more than 25 years in the fields of corporate laws, strategic management and policy matters. He hadworked with major business houses in Kerala such as,Kuttukaran Group, Popular Motors group, Malabar Gold in different capacities. Prior to joining with YLL he was the General Manager & Company Secretary of Manappuram Finance Ltd., A, BSE and NSE listed NBFC with pan India presence. He has contributed articles of professional importance in Chartered Secretary and other professional publications. In addition to the secretarial functions he also oversees the General Management functions of the Company such as, HR, Administration, Risk &Compliances. ',
+            'K.K.Sreenivas': 'Mr. K K Sreenivas is a Commerce Graduate and Fellow Member of the Institute of Chartered Accounts of India. He holds certification in Information Systems Audit (DISA) from the Institute of Chartered Accounts of India. He also holds CAI I B certification from the Indian Institute of Banking & Finance. He is an intermediate pass of the ACS exam of the Institute of Company Secretaries of India. He has 7 years of banking experience (HDFC Bank &Dhanlaxmi Bank) in various fields such as retail asset products, SME Finance and Corporate Banking. He further has 5years experience with NBFCs (Bajaj Finance &Manappuram Finance) in the field of mortgage based lending prior to joining Yogakshemam in early 2016. Recently, he has cleared the Limited Insolvency Examination and qualified to be a member of the Insolvency and Bankruptcy Board of India (IBBI). ',
+            'Prasad.P': 'He is a Graduate in Commerce and a Chartered Accountant. He has more than 12 years of varied experience in Accounts, Finance and Taxation in various sectors. He has served as the Chief Financial Officer in one of the leading Public Limited Companies in Kerala. A significant part of his employment has been in the NBFC Sector (Manappuram Finance Ltd.) and in the Jewellery Retail Sector (Manappuram Jewellers Ltd. and Kalyan Jewellers India (Pvt.) Ltd.) He oversees the Finance, Accounts and Taxation functions of the company. ',
+            'Shaju K Balan': ' 29 Years of Experience in Financial Industry (Insurance & NBFC) B.Sc., MBA Association with our company since 2019 Key functional area » Business Development » Marketing » Team Management In the realm of strategic sales planning, we take the lead in driving business development while maintaining a relentless commitment to quality. Through demographic and marketing analysis, we identify trends and insights that enable us to maximise the effectiveness of our marketing efforts. By thoroughly analysing the business needs and strategic direction, we identify and implement initiatives that align with our strategic goals, facilitating the accomplishment of our overall business objectives.',
+            'Rakesh K Venugopal': '16+ Experience in Two Wheeler Loans ,Bank and NBFC, B.A Economics Association with our company since 2018 Key functional area » Marketing and Business Development » Credit and Asset quality » Team management Kerala offers a promising market for two-wheeler finance, and our company recognises the potential it holds. We have established ideal credit policies and loan underwriting practices, supported by the integration of the latest technology. This enables us to effectively compete with major players in the industry. Furthermore, our excellent sales and collection team plays a vital role in ensuring the healthy growth of our two-wheeler loan portfolio. Their dedication and expertise contribute to the overall success of our business by effectively managing sales and ensuring timely collections.'
+        };
+
+        // Modal functionality for both directors and management
+        $('.view').click(function() {
+            const card = $(this).closest('.blog-allof');
+            const name = card.find('.name p:first').text().trim();
+            const position = card.find('.name p:last').text().trim();
+            const image = card.css('background-image').replace(/url\(['"](.+)['"]\)/, '$1');
+
+            $('#modalDirectorName').text(name);
+            $('#modalDirectorPosition').text(position);
+            $('#modalDirectorImage').attr('src', image);
+            
+            // Check both bio objects
+            if (bio[name]) {
+                $('#modalDirectorBio').text(bio[name]);
+            } else if (managementBio[name]) {
+                $('#modalDirectorBio').text(managementBio[name]);
+            } else {
+                // Try to find a matching name (case-insensitive)
+                const matchingName = Object.keys(bio).find(key => 
+                    key.toLowerCase() === name.toLowerCase()
+                ) || Object.keys(managementBio).find(key => 
+                    key.toLowerCase() === name.toLowerCase()
+                );
+                
+                if (matchingName) {
+                    $('#modalDirectorBio').text(bio[matchingName] || managementBio[matchingName]);
+                } else {
+                    console.error('No biography found for:', name);
+                    $('#modalDirectorBio').text('No biography available.');
+                }
+            }
+            
+            // Update to Bootstrap 5 modal initialization
+            const directorModal = new bootstrap.Modal('#directorModal');
+            directorModal.show();
+        });
+ </script>
 </body>
 
 </html>

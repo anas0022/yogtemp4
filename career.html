@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Join Our Team</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/home.css">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f7f8fa; margin: 0; }
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero-career {
+            background: url('images/welcome/investors.jpg') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 0 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        .hero-career::after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.316);
+        }
+        .hero-career h1 { font-size: 3rem; margin-bottom: 10px; z-index: 2; position: relative; }
+        .hero-career p { font-size: 1.3rem; margin-bottom: 30px; text-align: center;}
+        .cta-btn {
+            background: #0056b3;
+            color: #fff;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            z-index: 2; position: relative;
+        }
+        .cta-btn:hover { background: #003d80; }
+        .why-work {
+            background: #fff;
+            padding: 60px 0 50px 0;
+            text-align: center;
+        }
+        .why-work h2 { font-size: 2.2rem; margin-bottom: 30px; }
+        .why-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+        .why-icon {
+            background: #f0f4f8;
+            border-radius: 16px;
+            padding: 30px 20px;
+            width: 220px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .why-icon img { width: 48px; margin-bottom: 15px; }
+        .why-icon h4 { margin: 10px 0 8px 0; font-size: 1.1rem; }
+        .job-section {
+            padding: 60px 0 40px 0;
+            background: #f7f8fa;
+        }
+        .job-section h2 { text-align: center; font-size: 2rem; margin-bottom: 35px; }
+        .jobs-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 0 auto;
+         /*    max-width: 900px; */
+        }
+        .job-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 28px 22px;
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .job-card h3 { margin: 0 0 10px 0; font-size: 1.3rem; }
+        .job-card p { margin: 0 0 8px 0; color: #444; }
+        .job-card .apply-btn {
+            margin-top: 15px;
+            background: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 22px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .job-card .apply-btn:hover { background: #003d80; }
+        .application-section {
+            background: #fff;
+            padding: 60px 0 50px 0;
+            text-align: center;
+        }
+        .application-section h2 { font-size: 2rem; margin-bottom: 25px; }
+        .application-form {
+          /*   max-width: 420px; */
+            margin: 0 auto;
+            background: #f7f8fa;
+            padding: 35px 30px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .application-form input, .application-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .application-form button {
+            background: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 12px 35px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .application-form button:hover { background: #003d80; }
+        .faq-section {
+            background: #f7f8fa;
+            padding: 60px 0 50px 0;
+        }
+        .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 35px; }
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 18px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .faq-item h4 { margin: 0 0 8px 0; font-size: 1.1rem; }
+        .faq-item p { margin: 0; color: #444; }
+        @media (max-width: 900px) {
+            .why-icons, .jobs-grid { flex-direction: column; align-items: center; }
+            .main-content { padding: 0 8px; }
+        }
+    </style>
+</head>
+<body>
+    
+
+<menu>
+    <div class="menu-container">
+        <img src="images/logo/logo.png" alt="" srcset="">
+        <ul>
+
+            <ul>
+                <li onclick="window.location.href='index.html'">Home</li>
+                <li onclick="window.location.href='about.html'">About</li>
+                <li class="services-link">Services</li>
+          <!--       <ul class="service-list">
+                    <li onclick="window.location.href='goldloan.html'">Gold Loan</li>
+                    <li onclick="window.location.href='businessloan.html'">Business Loan</li>
+                    <li onclick="window.location.href='cdloan.html'">CD Loan</li>
+                    <li onclick="window.location.href='vehicle.html'">Vehicle Loan</li>
+                </ul> -->
+                <li onclick="window.location.href='investor.html'">Investors</li>
+                <li onclick="window.location.href='onlineserives.html'">Online Services</li>
+                <li onclick="window.location.href='policies.html'">Policies</li>
+                <li onclick="window.location.href='career.html'">Career</li>
+                <li onclick="window.location.href='csr.html'">CSR</li>
+                <li onclick="window.location.href='contact.html'">Contact Us</li>
+            </ul>
+
+        </ul>
+    </div>
+</menu>
+
+<section class="hero-career">
+    <div class="main-content">
+        <h1>Join Our Team</h1>
+        <p>Build your career with us. We're looking for passionate, talented people to help us make a difference.</p>
+        <button class="cta-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply Now</button>
+    </div>
+</section>
+
+<!-- <section class="why-work">
+    <div class="main-content">
+        <h2>Why Work With Us?</h2>
+        <div class="why-icons">
+            <div class="why-icon">
+                <img src="images/icon/growth.png" alt="Growth">
+                <h4>Career Growth</h4>
+                <p>Opportunities to learn, grow, and advance in your career.</p>
+            </div>
+            <div class="why-icon">
+                <img src="images/icon/teamwork.png" alt="Teamwork">
+                <h4>Collaborative Culture</h4>
+                <p>Work with a supportive and dynamic team.</p>
+            </div>
+            <div class="why-icon">
+                <img src="images/icon/benefits.png" alt="Benefits">
+                <h4>Great Benefits</h4>
+                <p>Competitive salary, health insurance, and more.</p>
+            </div>
+          <div class="why-icon">
+                <img src="images/icon/flexibility.png" alt="Flexibility">
+                <h4>Work-Life Balance</h4>
+                <p>Flexible work options to suit your lifestyle.</p>
+            </div>
+        </div>
+    </div>
+</section>
+ -->
+<section class="job-section">
+    <div class="main-content">
+        <h2>Open Positions</h2>
+        <div class="jobs-grid">
+            <div class="job-card">
+                <h3>Senior Software Engineer</h3>
+                <p><b>Location:</b> Kerala</p>
+                <p><b>Experience:</b> 3-5 Years</p>
+                <p><b>Type:</b> Full Time</p>
+                <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
+            </div>
+            <div class="job-card">
+                <h3>Financial Analyst</h3>
+                <p><b>Location:</b> Tamil Nadu</p>
+                <p><b>Experience:</b> 1-3 Years</p>
+                <p><b>Type:</b> Full Time</p>
+                <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
+            </div>
+            <div class="job-card">
+                <h3>Office Staff</h3>
+                <p><b>Location:</b> Karnataka</p>
+                <p><b>Experience:</b> 5+ Years</p>
+                <p><b>Type:</b> Full Time</p>
+                <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="application-section" id="application">
+    <div class="main-content">
+        <h2>Apply Now</h2>
+        <form class="application-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Position Applying For" required>
+            <input type="file" accept=".pdf,.doc,.docx" required>
+            <textarea rows="4" placeholder="Cover Letter / Message" required></textarea>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="main-content">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h4>How do I apply for a job?</h4>
+                <p>Fill out the application form above and attach your resume. We'll get in touch if your profile matches our requirements.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I apply for multiple positions?</h4>
+                <p>Yes, you can apply for more than one position if you meet the qualifications.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What is the interview process like?</h4>
+                <p>Our process typically includes an initial screening, technical or functional interviews, and a final HR round.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-section">
+    <div class="container">
+        <!-- <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>  Aswini Junction, Thiruvambady-PO, Thrissur, Kerala-680022</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>9876543210 0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>mail@info.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget" style="padding: 20px;">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="images/logo.jpg" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="footer-text">
+                            <p>To emerge as the most trusted financial solution provider in India, with special
+                                focus on emerging segments of society, through a nationwide, efficient and service
+                                oriented network..</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="https://www.facebook.com/share/18qcUVv3fJ/?mibextid=wwXIfr" target="_blank"
+                                style="background-color: white;"><img src="images/icon/facebook.png" alt=""
+                                    srcset=""></a>
+                            <a href="https://www.instagram.com/yogloansfinance?igsh=djhqZGI0dG92bGI0"
+                                target="_blank"><img src="images/icon/social-media.png" alt="" srcset=""></a>
+                            <a href="https://www.linkedin.com/company/yogloans"><img
+                                    src="images/icon/linkedin-logo.png" alt="" srcset=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li> <a href="about.html">About Us</a></li>
+
+                            <li> <a href="investors.html">Investors</a></li>
+                            <li> <a href="online-services.html">Online Services</a></li>
+                            <li> <a href="policies.html">Policies</a></li>
+                            <li> <a href="csr.html">CSR</a></li>
+                            <li><a href="career.html">Career</a></li>
+                            <li> <a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><img src="images/icon/send.png" alt="" srcset=""></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>2025 YOGAKSHEMAM LOANS Ltd. All rights reserved. </p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="loans.html">Gold Loan</a></li>
+                            <li><a href="vehicle.html">Vehicle Loan</a></li>
+                            <li><a href="personal.html">Business Loan</a></li>
+                            <li><a href="cd.html">CD Loan</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
