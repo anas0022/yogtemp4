@@ -46,3 +46,25 @@ menu .menu-container{
 .menu-container ul li:hover{
     color: black;
 }
+
+.service-list{
+    position: absolute;
+    top: 100%;
+    left: 28%;
+    width: 250px !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px !important;
+    opacity: 0;
+    display: none;
+    gap: 10px   ;
+}
+
+.service-list li{
+    text-align: start !important;
+    width: 100%;
+  /*   border: 1px solid; */
+}

@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Business Loan - YOGAKSHEMAM LOANS</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+
 
 </head>
 <style>
@@ -22,11 +25,149 @@
     .welcome-container .button p{
         font-size: 18px;
     }
-    .contact{
-        padding: 20px;
+    .gold-info-section{
+        width: 100%;
+
     }
-    .contact .contact-container{
-        flex-direction: column-reverse;
+    .gold-info-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gold-features-and-button {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 20px;
+        gap: 20px   ;
+    }
+    .gold-features{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 20px   ;
+    }
+    .gold-features .feature{
+        display: flex;
+       
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        gap: 15px;
+    }
+    .gold-features .feature img{
+        width: 30px;
+        height: 30px;
+    }
+    .apply-button{
+padding: 10px;
+margin-top: 10px;
+width: 100%;
+display: flex;
+justify-content: end;
+    }
+    .apply-button button{
+        width: 180px;
+        padding: 15px;
+        background-color:#044697 ;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .gold-description{
+        width: 50%;
+    }
+    .gold-description p{
+        color: black;
+        padding: 15px;
+        line-height: 2.5;
+    }
+
+    /* Benefits Section Styles */
+    .benefit {
+        padding: 60px 20px;
+        background-color: #f8f9fa;
+    }
+
+    .benefit .right {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .benefit .card-item {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .benefit .card-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .benefit .card-content {
+        padding: 25px;
+    }
+
+    .benefit h3 {
+        color: #044697;
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .benefit p {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
+        color: #555;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .benefit i {
+        color: #044697;
+        position: absolute;
+        left: 0;
+        top: 4px;
+        font-size: 1.1rem;
+    }
+
+    .benefit span {
+        flex: 1;
+        font-size: 0.95rem;
+    }
+
+    .benefit .card-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .benefit .card-content p:not(:last-child) {
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 12px;
+    }
+
+    .benefit .card-content p:not(:first-child) {
+        padding-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+        .benefit .right {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 <body>
@@ -58,14 +199,124 @@
     </menu>
 
     <section class="welcome-container"
-        style="background-image: url(images/welcome/contact.jpg);">
-        <h1 >Contact Us
+        style="background-image: url(images/welcome/vehicle2.jpg);">
+        <h1 >Vehicle Loan
             </h1><!--    <p id="sub">Experience Door Step Gold Loan Services</p>  -->
     <div class="button">
-        <p><a href="/index.html">Home</a> - Contact Us</p>
+        <p><a href="/index.html">Home</a> - Vehicle Loan</p>
      </div>
 
     </section>
+    <section class="gold-info-section">
+        <div class="gold-info-container">
+            <div class="gold-description">
+                <p>A Vehicle Loan is a convenient and secure way to access instant funds by pledging your vehicle as collateral. With minimal documentation and quick processing, it is an ideal solution for urgent financial needs such as business expansion, medical emergencies, or education expenses. The loan amount is determined based on the value of the vehicle, offering competitive interest rates and flexible repayment options to suit your needs.  </p>
+            </div>
+            <div class="gold-features-and-button">
+                <div class="gold-features">
+                    <div class="feature">
+                        <img src="images/icon/checklist.png" alt="Quick Processing">
+                        <span>
+                            Low interest rate.  </span>
+                    </div>
+                    <div class="feature">
+                        <img src="images/icon/checklist.png" alt="Minimal Documentation">
+                        <span> 
+                            Loan amount upto Rs.200000.  </span>
+                    </div>
+
+                    <div class="feature">
+                        <img src="images/icon/checklist.png" alt="Competitive Rates">
+                        <span>
+                            
+
+                            Maximum duration 48 month.  </span>
+                    </div>
+                </div>
+                <div class="apply-button">
+                    <button onclick="window.location.href='apply.html'">Apply Now →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="benefit">
+        <div class="right">
+            <div class="card-item">
+                <div class="card-content">
+                <h3>Make repayment online at your convenience </h3>
+                <p>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Quick Processing</span>
+                </p>
+                <p>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Minimal Documentation</span>
+                </p>
+                
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card-content">
+                <h3>Special schemes for ladies,employees,agriculturist.  </h3>
+                <p>
+                    <i class="fas fa-check-circle"></i>
+                    <span>
+                        
+
+                        Our team of experienced professionals will visit your home or office to assess your vehicle and provide a fair valuation.  
+                    </span>
+                </p>
+            </div>
+            </div>  
+            <div class="card-item">
+                <div class="card-content">
+                <h3>Finance facility upto onroad price for eligible customers.   </h3>
+                <p>
+                    <i class="fas fa-check-circle"></i>
+                    <span>
+                       
+
+                        Eligible customers can avail finance up to the full on-road price of the vehicle, reducing the need for a large upfront payment. 
+                    </span>
+                </p>
+            </div>
+            </div>
+            <div class="card-item">
+                <div class="card-content">
+                <h3>Minimal Documentation </h3>
+                <p>
+                    <i class="fas fa-check-circle"></i>
+                            <span>
+                                We require minimal documentation, including your identity proof, address proof, and gold item details.
+                            </span>
+                </p>
+            </div>
+            </div>
+            <div class="card-item">
+                <div class="card-content">
+                <h3>Flexible repayment options </h3>
+                <p>
+                    <i class="fas fa-check-circle"></i>
+                    <span>
+                        Choose from various repayment options, including monthly, quarterly, or yearly installments, to suit your financial needs.
+                    </span>
+                </p>
+            </div>
+            </div>
+              <div class="card-item">
+                <div class="card-content">
+                <h3>Digitised Process</h3>
+                <p>
+                    <i class="fas fa-check-circle"></i>
+                    <span>
+                        We offer a digitised process for a seamless and hassle-free experience.
+                    </span>
+                </p>
+            </div>
+            </div>
+        </div>
+    </div>
+    
     <section class="contact">
         <div class="contact-container">
             <div class="address">
