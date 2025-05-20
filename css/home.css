@@ -681,21 +681,21 @@ height: 100%;
   flex-direction: column;
 }
 .list-doc ul {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2 ,1fr);
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(2 ,1fr) !important;
 }
 .list-doc .other {
-  width: 100%;
+  width: 100% !important;
 }
 .other .annual-report-content 
 {
-  grid-template-columns: repeat(1,1fr);
+  grid-template-columns: repeat(1,1fr) !important;
 }
 .credit-rating-content .body {
-  flex-direction: column;
+  flex-direction: column !important;
 }
 .credit-rating-content .body .card {
-  width: 100%;
+  width: 100% !important;
 }
 }
