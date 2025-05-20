@@ -31,3 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
 });
+
+
+var menu = document.getElementById('menu');
+var close = document.getElementById('close');
+var res= document.getElementById('res-menu');
+menu.onclick= function(){
+    res.style.height='600px ';
+}
+close.onclick= function(){
+    res.style.height='0px ';
+}

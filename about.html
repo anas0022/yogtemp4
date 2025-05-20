@@ -38,28 +38,40 @@
         font-size: 18px;
     }
     .reviews-section {
-/*         background: #111; */
-        padding: 40px 0;
+        padding: 40px 20px;
         color: #000000;
         display: flex;
         justify-content: center;
+        width: 100%;
+        overflow: hidden;
     }
     .reviews-carousel {
         display: flex;
         align-items: flex-start;
         gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+        position: relative;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+        scrollbar-width: none;  /* Hide scrollbar for Firefox */
+        padding: 0 40px;
+    }
+    .reviews-carousel::-webkit-scrollbar {
+        display: none;  /* Hide scrollbar for Chrome, Safari and Opera */
     }
     .review-card {
-       /*  background: #222; */
-       /*  border-radius: 30px; */
         padding: 30px 25px 20px 25px;
-        width: 300px;
+        min-width: 280px;
+        max-width: 300px;
         min-height: 250px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         position: relative;
         box-shadow: 0 0px 4px rgba(156, 156, 156, 0.3);
+        flex-shrink: 0;
     }
     .stars {
         color: gold;
@@ -104,19 +116,86 @@
         color: #bbb;
     }
     .review-arrow {
-/*         background: #222; */
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
         border: none;
         color: #000000;
         font-size: 2em;
-        border-radius: 50%;
         width: 40px;
         height: 40px;
-        align-self: center;
+        border-radius: 50%;
         cursor: pointer;
-        transition: background 0.2s;
+        transition: all 0.3s ease;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .review-arrow.left {
+        left: 0;
+    }
+    .review-arrow.right {
+        right: 0;
     }
     .review-arrow:hover {
-        background: #444;
+        background: #f0f0f0;
+        transform: translateY(-50%) scale(1.1);
+    }
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+        .reviews-section {
+            padding: 30px 10px;
+        }
+        
+        .reviews-carousel {
+            padding: 0 30px;
+        }
+        
+        .review-card {
+            min-width: 250px;
+            padding: 20px 15px 15px 15px;
+        }
+        
+        .review-arrow {
+            width: 35px;
+            height: 35px;
+            font-size: 1.5em;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .reviews-section {
+            padding: 20px 5px;
+        }
+        
+        .reviews-carousel {
+            padding: 0 25px;
+        }
+        
+        .review-card {
+            min-width: 220px;
+            padding: 15px 12px 12px 12px;
+        }
+        
+        .review-arrow {
+            width: 30px;
+            height: 30px;
+            font-size: 1.2em;
+        }
+        
+        .review-text {
+            font-size: 0.9em;
+        }
+        
+        .review-name {
+            font-size: 0.9em;
+        }
+        
+        .review-date {
+            font-size: 0.8em;
+        }
     }
     #review{
         width: 100%;
@@ -600,62 +679,12 @@ all 0.5s ease;
 }
 </style>
 <body>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Update the modal structure -->
-    <div class="modal fade" id="directorModal" tabindex="-1" aria-labelledby="directorModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content instagram-modal">
-                <div class="modal-header instagram-header">
-                    <div class="d-flex align-items-center">
-                        <img src="" alt="" id="modalDirectorImage" class="director-avatar">
-                        <div class="ms-3">
-                            <h5 id="modalDirectorName" class="mb-0"></h5>
-                            <p id="modalDirectorPosition" class="text-muted mb-0"></p>
-                        </div>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body instagram-body">
-                    <div class="director-bio">
-                        <p id="modalDirectorBio"></p>
-                    </div>
-                </div>
-                <div class="modal-footer instagram-footer">
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/18qcUVv3fJ/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/yogloansfinance?igsh=djhqZGI0dG92bGI0" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/yogloans" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                     
-                    </div>
-    
-    
-    
-                </div>
-            </div>
-        </div>
-    </div>
     <menu>
         <div class="menu-container">
             <img src="images/logo/logo.png" alt="" srcset="">
+            <div class="toggle">
+                <img src="images/icon/open-menu.png" alt="" srcset="" id="menu">
+            </div>
             <ul>
 
                 <ul>
@@ -679,7 +708,35 @@ all 0.5s ease;
             </ul>
         </div>
     </menu>
+    <menu id="res-menu">
+        <div class="menu-container">
+            
+           
+            <ul> <div class="toggle">
+                <img src="images/icon/arrow(1).png" alt="" srcset="" id="close">
+            </div>
 
+                <ul>
+                    <li onclick="window.location.href='index.html'">Home</li>
+                    <li onclick="window.location.href='about.html'">About</li>
+                    <li class="services-link">Services</li>
+                 <ul class="service-list">
+                        <li onclick="window.location.href='goldloan.html'">Gold Loan</li>
+                        <li onclick="window.location.href='businessloan.html'">Business Loan</li>
+                        <li onclick="window.location.href='cdloan.html'">CD Loan</li>
+                        <li onclick="window.location.href='vehicle.html'">Vehicle Loan</li>
+                    </ul> 
+                    <li onclick="window.location.href='investor.html'">Investors</li>
+                    <li onclick="window.location.href='onlineserives.html'">Online Services</li>
+                    <li onclick="window.location.href='policies.html'">Policies</li>
+                    <li onclick="window.location.href='career.html'">Career</li>
+                    <li onclick="window.location.href='csr.html'">CSR</li>
+                    <li onclick="window.location.href='contact.html'">Contact Us</li>
+                </ul>
+
+            </ul>
+        </div>
+    </menu>
     <section class="welcome-container"
     style="background-image: url(images/welcome/colleagues-working-project-discussing-details.jpg)">
         <h1 id="header">About Us</h1>
@@ -689,6 +746,7 @@ all 0.5s ease;
         </div>
 
     </section>
+   
     <div class="client-counts">
         <div class="content">
             <div class="item" style="display: flex; justify-content: center;">
