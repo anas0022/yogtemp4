@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="css/home.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,51 +28,59 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <style>
-    *{
+    * {
         color: black;
     }
-     .welcome-container {
+
+    .welcome-container {
         height: 300px;
-        gap: 0px    ;
+        gap: 0px;
     }
-    .welcome-container .button p{
+
+    .welcome-container .button p {
         font-size: 18px;
     }
-      a{
+
+    a {
         text-decoration: none;
         color: white;
     }
-    .list-doc{
+
+    .list-doc {
         width: 100%;
         display: flex;
         height: auto;
-        background-color:whitesmoke ;
-     margin-top: 10px;
-     margin-bottom: 10px;
+        background-color: whitesmoke;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
-    .list-doc ul{
+
+    .list-doc ul {
         width: 30%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
         padding: 15px;
-        gap: 5px   ;
+        gap: 5px;
         background-color: white;
-    /*     background-color: whitesmoke; */
+        /*     background-color: whitesmoke; */
     }
-    .list-doc ul li{
+
+    .list-doc ul li {
         width: 100%;
         box-shadow: 0px 0px 2px 0px gray;
         padding: 10px;
     }
-    .list-doc ul li.active{
+
+    .list-doc ul li.active {
         background-color: #044697;
         color: white;
     }
-    .list-doc .other{
+
+    .list-doc .other {
         width: 70%;
-  /*       background-color: whitesmoke; */
+        /*       background-color: whitesmoke; */
         height: 100%;
         min-height: 400px;
         display: flex;
@@ -77,38 +88,282 @@
         align-items: center;
         padding: 20px;
     }
-    .other .annual-report-content{
+
+    .other .annual-report-content {
         width: 100%;
+        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        /*  height: 100%; */
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+    }
+    .other .annual-report-content.active {
         display: grid;
-grid-template-columns: repeat(4, 1fr);
-       /*  height: 100%; */
-        justify-content: center;
-        align-items: center;
-        gap: 10px   ;
-  
     }
-    .annual-report-content .reports{
-        width: auto;
+
+    .annual-report-content .reports {
+        width: 240px;
+        height: 80px;
         display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: black;
+        padding: 15px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .annual-report-content .reports:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border: 1px solid #044697;
+    }
+
+    .other .announcements {
+        width: 100%;
+        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        /*  height: 100%; */
         justify-content: center;
         align-items: center;
-        box-shadow: 0px 0px 2px 0px gray;
+        gap: 10px;
+
+    }
+    .other .announcements.active {
+        display: grid;
+    }
+
+    .announcements .reports {
+        width: 240px;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         color: black;
-        padding: 10px;
+        padding: 15px;
         cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-align: left;
+        overflow: hidden;
     }
-    .reports .img img{
-        width: 35px;
-        height: 35px;
+
+    .announcements .reports:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border: 1px solid #044697;
     }
-    .detail p{
+
+
+    .other .public-disclosure {
+        width: 100%;
+        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        /*  height: 100%; */
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+    }
+    .other .public-disclosure.active {
+        display: grid;
+    }
+
+    .public-disclosure .reports {
+        width: 240px;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         color: black;
-        width: 180px;
-       
-        text-align: center;
+        padding: 15px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .public-disclosure .reports:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border: 1px solid #044697;
+    }
+
+    .other .form-for-tds {
+        width: 100%;
+        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        /*  height: 100%; */
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+    }
+    .other .form-for-tds.active {
+        display: grid;
+    }
+
+    .form-for-tds .reports {
+        width: 240px;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: black;
+        padding: 15px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .form-for-tds .reports:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border: 1px solid #044697;
+    }
+    .other .appointment-order {
+        width: 100%;
+        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        /*  height: 100%; */
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+    }
+    .other .appointment-order.active {
+        display: grid;
+    }
+
+    .appointment-order .reports {
+        width: 240px;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: black;
+        padding: 15px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .appointment-order .reports:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border: 1px solid #044697;
+    }
+    .unpaid-divident {
+        width: 100%;
+        padding: 2rem;
+        /*         background: #f8f9fa; */
+        display: none;
+        color: black;
+    }
+
+    .unpaid-divident.active {
+        display: block;
+    }
+
+    .unpaid-divident-content {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
     }
     
-.customer-content{
+    .digital-lending-partners {
+        width: 100%;
+        padding: 2rem;
+        /*         background: #f8f9fa; */
+        display: none;
+        color: black;
+    }
+
+    .digital-lending-partners.active {
+        display: block;
+    }
+
+    .digital-lending-partners-content
+{
+    width: 100%;
+    max-width: 1200px; /* Set a max-width for content */
+    margin: 0 auto; /* Center the content */
+    display: flex; /* Use flexbox for centering the card */
+    justify-content: center; /* Center the card horizontally */
+    align-items: center; /* Center the card vertically */
+    padding: 1rem;
+}
+
+.digital-lending-partners-content .card {
+    width: 400px; /* Set a reasonable width for the card */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reports .img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.reports .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.detail {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.detail p {
+    color: black;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-bottom: 0;
+    white-space: normal;
+}
+
+.customer-content {
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -116,32 +371,34 @@ grid-template-columns: repeat(4, 1fr);
     background-color: #eee8e8;
 }
 
-.customer-content p:nth-child(1){
+.customer-content p:nth-child(1) {
 
-  font-size: 1rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap:
-10px;
-  color: black;
- /*  text-transform: uppercase; */
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap:
+        10px;
+    color: black;
+    /*  text-transform: uppercase; */
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
+
 /* .customer-content p span{
 width: 40px;
   border-bottom:
 2px solid black;
 } */
 
-.customer-contentt h2{
-font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-top: 10px;}
+.customer-contentt h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 10px;
+}
 
 .read-more-btn {
     display: inline-block;
@@ -159,6 +416,7 @@ font-family: 'Poppins', sans-serif;
     position: relative;
     overflow: hidden;
 }
+
 .read-more-btn::after {
     content: '';
     position: absolute;
@@ -171,26 +429,32 @@ font-family: 'Poppins', sans-serif;
     transform: translate(-50%, -50%);
     transition: width 0.3s ease, height 0.3s ease;
 }
+
 .read-more-btn:hover::after {
     width: 200px;
     height: 200px;
 }
+
 .read-more-btn:hover {
     background-color: #B70000;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(154, 6, 6, 0.3);
 }
+
 .read-more-btn:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(154, 6, 6, 0.2);
 }
-.sec1{
+
+.sec1 {
     width: 50%;
-  }
-  .customer-testimonial{
+}
+
+.customer-testimonial {
     padding: 80px 0;
     background: #f8f9fa;
 }
+
 .customer-testimonial .sec1 {
     text-align: center;
     margin-bottom: 50px;
@@ -204,17 +468,19 @@ font-family: 'Poppins', sans-serif;
     letter-spacing: 2px;
     margin-bottom: 15px;
 }
-h2{
+
+h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
+
 .customer-testimonial .sec1 h2 {
     color: #1a1a1a;
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 0;
-   
-    
+
+
 }
 
 #owl-demo1 {
@@ -230,7 +496,7 @@ h2{
     position: relative;
     overflow: hidden;
     margin: 20px 0;
-   /*  border-right:2px solid black ;
+    /*  border-right:2px solid black ;
     border-left: 2px solid black; */
 }
 
@@ -241,7 +507,7 @@ h2{
     left: 0;
     width: 100%;
     height: 4px;
-/*     background: linear-gradient(90deg, #B70000, #710505); */
+    /*     background: linear-gradient(90deg, #B70000, #710505); */
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
@@ -349,26 +615,28 @@ h2{
     transform: scale(1.3);
     box-shadow: 0 0 15px rgba(154, 6, 6, 0.3);
 }
-#message{
+
+#message {
     font-family: 'Lato', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #666;
-  line-height: 1.8;
-  width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient:
-vertical;
-  overflow:
-hidden;
-  text-overflow: ellipsis;
-  transition:
-all 0.5s ease;
-  padding-right: 10px;
-  text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.8;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient:
+        vertical;
+    overflow:
+        hidden;
+    text-overflow: ellipsis;
+    transition:
+        all 0.5s ease;
+    padding-right: 10px;
+    text-transform: capitalize;
 }
-.achivements{
+
+.achivements {
     width: 100%;
     height: 150px;
     padding: 20px;
@@ -377,29 +645,31 @@ all 0.5s ease;
     align-items: center;
     position: relative;
 }
-.achivements .count{
+
+.achivements .count {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px   ;
+    gap: 10px;
     font-size: 1.6rem;
     margin-bottom: 10px;
     color: #9a0606;
     z-index: 3000;
 }
 
-.achivements .text{
+.achivements .text {
     color: #9a0606;
     z-index: 3000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px   ;
+    gap: 10px;
     font-size: 1.2rem;
 }
-.items{
+
+.items {
     border-right: 2px solid rgb(255, 255, 255);
     padding: 20px;
     display: flex;
@@ -409,26 +679,29 @@ all 0.5s ease;
     width: 23%;
     z-index: 300;
 }
-#director{
+
+#director {
     background-color: red;
     height: 300px;
     background-image: url(ramachandran.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
+
     padding: 0px;
     display: flex;
     justify-content: start;
     align-items: end;
 }
-#director .name{
+
+#director .name {
     width: 80%;
     padding: 10px;
     background-color: #044697;
     /* color: white; */
 }
- #director .name p{
+
+#director .name p {
     color: white;
 }
 
@@ -449,8 +722,8 @@ all 0.5s ease;
 }
 
 /* #director .view:hover {
-    background: #B70000;
-    transform: scale(1.1);
+background: #B70000;
+transform: scale(1.1);
 }
  */
 #director .view i {
@@ -461,27 +734,33 @@ all 0.5s ease;
 
 .modal-content {
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 .modal-header {
     background-color: #f8f9fa;
     border-bottom: 2px solid #044697;
 }
+
 .modal-title {
     color: #044697;
     font-weight: 600;
 }
+
 .director-info h4 {
     color: #1a1a1a;
     font-weight: 600;
 }
+
 .director-info p {
     color: #666;
     line-height: 1.6;
 }
+
 .modal-body {
     padding: 20px;
 }
+
 .img-fluid.rounded {
     border: 2px solid #044697;
     padding: 5px;
@@ -490,7 +769,7 @@ all 0.5s ease;
 .instagram-modal {
     border-radius: 12px;
     border: none;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
@@ -531,7 +810,7 @@ all 0.5s ease;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .director-bio p {
@@ -580,21 +859,23 @@ all 0.5s ease;
 .btn-close:hover {
     opacity: 1;
 }
-.big-para{
+
+.big-para {
     width: 50%;
 }
 
-.credit-rating{
+.credit-rating {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    padding:20px;
+    padding: 20px;
     background-color: #dbd4d423;
 }
-.credit-rating-content{
+
+.credit-rating-content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -602,33 +883,37 @@ all 0.5s ease;
     align-items: start;
     flex-direction: column;
 }
-.credit-rating-content h3{
+
+.credit-rating-content h3 {
     font-size: 1.3rem;
     font-weight: 600;
     color: #000;
 }
-.credit-rating-content .body{
+
+.credit-rating-content .body {
     width: 100%;
     height: 100%;
     display: flex;
-    gap:20px;
+    gap: 20px;
     justify-content: start;
     align-items: center;
     margin-top: 20px;
 }
-.credit-rating-content .body .card{
+
+.credit-rating-content .body .card {
     width: 100%;
     height: 100%;
     display: flex;
-    
+
     justify-content: center;
     align-items: center;
     gap: 1rem;
     padding: 10px;
-    height:180px;
-    width:450px;
+    height: 180px;
+    width: 450px;
 }
-.credit-rating-content .body .card .image{
+
+.credit-rating-content .body .card .image {
     width: 100%;
     height: 70%;
     display: flex;
@@ -638,58 +923,164 @@ all 0.5s ease;
     border-radius: 5px;
 }
 
-.credit-rating-content .body .card .content{
-width: 100%;
+.credit-rating-content .body .card .content {
+    width: 100%;
     height: 30%;
     display: flex;
- /*    flex-direction: column; */
-    justify-content:center;
+    /*    flex-direction: column; */
+    justify-content: center;
     align-items: center;
     gap: 5rem;
 }
-.content p:nth-child(1){
+
+.content p:nth-child(1) {
     font-size: 1.2rem;
     font-weight: 600;
     color: #000;
     width: 100%;
-    text-transform:lowercase;
+    text-transform: lowercase;
     padding: 10px;
     display: flex;
     justify-content: end;
     align-items: center;
 }
-.content p:nth-child(2){
+
+.content p:nth-child(2) {
     font-size: 1.2rem;
     font-weight: 600;
     color: #000;
     width: 100%;
 }
-.image img{
+
+.image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+.investors-conatct {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: whitesmoke;
+    /* Consistent with list-doc background */
+}
+.investors-conatct.active 
+{
+    display: flex;
+}
+
+.investors-conatct-content {
+    width: 70%;
+    /* Match the width of the '.other' section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.investors-conatct-content .card {
+    width: 400px;
+    /* Set a reasonable width for the card */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card .top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.top .image {
+    width: 60px;
+    /* Set size for the image container */
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #044697;
+    /* Add a border similar to director images */
+    flex-shrink: 0;
+}
+
+.top .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.top .name {
+    display: flex;
+    flex-direction: column;
+}
+
+.name h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+}
+
+.name p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.card .address {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.card .address p {
+    margin-bottom: 5px;
+    /* Add some space between address lines */
+}
+
+/* Style for the last address line to remove bottom margin */
+.card .address p:last-child {
+    margin-bottom: 0;
+}
 </style>
+
 <body>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
+    <!-- Preloader -->
+    <div class="loader-mask">
+        <div class="loader">
+            <div></div>
+            <div></div>
         </div>
-      </div>
+    </div>
+    <!-- Preloader -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Update the modal structure -->
     <div class="modal fade" id="directorModal" tabindex="-1" aria-labelledby="directorModalLabel" aria-hidden="true">
@@ -712,14 +1103,17 @@ width: 100%;
                 </div>
                 <div class="modal-footer instagram-footer">
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/18qcUVv3fJ/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/yogloansfinance?igsh=djhqZGI0dG92bGI0" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/yogloans" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                     
+                        <a href="https://www.facebook.com/share/18qcUVv3fJ/?mibextid=wwXIfr" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/yogloansfinance?igsh=djhqZGI0dG92bGI0" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/yogloans" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+
                     </div>
-    
-    
-    
+
+
+
                 </div>
             </div>
         </div>
@@ -736,12 +1130,12 @@ width: 100%;
                     <li onclick="window.location.href='index.html'">Home</li>
                     <li onclick="window.location.href='about.html'">About</li>
                     <li class="services-link">Services</li>
-                 <ul class="service-list">
+                    <ul class="service-list">
                         <li onclick="window.location.href='goldloan.html'">Gold Loan</li>
                         <li onclick="window.location.href='businessloan.html'">Business Loan</li>
                         <li onclick="window.location.href='cdloan.html'">CD Loan</li>
                         <li onclick="window.location.href='vehicle.html'">Vehicle Loan</li>
-                    </ul> 
+                    </ul>
                     <li onclick="window.location.href='investor.html'">Investors</li>
                     <li onclick="window.location.href='onlineserives.html'">Online Services</li>
                     <li onclick="window.location.href='policies.html'">Policies</li>
@@ -755,22 +1149,23 @@ width: 100%;
     </menu>
     <menu id="res-menu">
         <div class="menu-container">
-            
-           
-            <ul> <div class="toggle">
-                <img src="images/icon/arrow(1).png" alt="" srcset="" id="close">
-            </div>
+
+
+            <ul>
+                <div class="toggle">
+                    <img src="images/icon/arrow(1).png" alt="" srcset="" id="close">
+                </div>
 
                 <ul>
                     <li onclick="window.location.href='index.html'">Home</li>
                     <li onclick="window.location.href='about.html'">About</li>
                     <li class="services-link">Services</li>
-                 <ul class="service-list">
+                    <ul class="service-list">
                         <li onclick="window.location.href='goldloan.html'">Gold Loan</li>
                         <li onclick="window.location.href='businessloan.html'">Business Loan</li>
                         <li onclick="window.location.href='cdloan.html'">CD Loan</li>
                         <li onclick="window.location.href='vehicle.html'">Vehicle Loan</li>
-                    </ul> 
+                    </ul>
                     <li onclick="window.location.href='investor.html'">Investors</li>
                     <li onclick="window.location.href='onlineserives.html'">Online Services</li>
                     <li onclick="window.location.href='policies.html'">Policies</li>
@@ -782,32 +1177,31 @@ width: 100%;
             </ul>
         </div>
     </menu>
-    <section class="welcome-container"
-        style="background-image: url(images/welcome/investors.jpg);">
-        <h1 >Investors
-            </h1><!--    <p id="sub">Experience Door Step Gold Loan Services</p>  -->
-    <div class="button">
-        <p><a href="/index.html">Home</a> - About Us</p>
-     </div>>
+    <section class="welcome-container" style="background-image: url(images/welcome/investors.jpg);">
+        <h1>Investors
+        </h1><!--    <p id="sub">Experience Door Step Gold Loan Services</p>  -->
+        <div class="button">
+            <p><a href="/index.html">Home</a> - About Us</p>
+        </div>>
 
     </section>
-<div class="list-doc">
-    <ul>
-        <li class="active">Annual Reports</li>
-        <li>Announcements</li>
-        <li>Investor Contact</li>
-        <li>Public Disclosure</li>
-        <li>Forms for TDS on Dividend</li>
-        <li>Unpaid Dividend</li>
-        <li>Appointment Order of Independent Directors
-        </li>
-        <li>Digital Lending Partners</li>
-    </ul>
-    <div class="other">
-        
-            <div class="annual-report-content">
-                
-                <div class="reports" onclick="window.open('report23-24.html', '_blank')">
+    <div class="list-doc">
+        <ul>
+            <li class="active" id="annual-report">Annual Reports</li>
+            <li id="announcements">Announcements</li>
+            <li id="investor">Investor Contact</li>
+            <li id="public">Public Disclosure</li>
+            <li id="forms">Forms for TDS on Dividend</li>
+            <li id="unpaid">Unpaid Dividend</li>
+            <li id="appointmnet">Appointment Order of Independent Directors
+            </li>
+            <li id="digital">Digital Lending Partners</li>
+        </ul>
+        <div class="other">
+
+            <div class="annual-report-content active">
+
+                <div class="reports" onclick="window.open('pdf/investor/announcement/AnnualReport2023-24.pdf', '_blank')">
 
                     <div class="img">
                         <img src="images/icon/pdf.png" alt="PDF Icon">
@@ -819,103 +1213,413 @@ width: 100%;
                     </div>
                 </div>
 
-                
-<div class="reports" onclick="window.open('report22-21.html', '_blank')">
 
-<div class="img">
-<img src="images/icon/pdf.png" alt="PDF Icon">
-</div>
-<div class="detail">
-<p>
-    2022 - 2023
-</p>
-</div>
-</div>
-<div class="reports" onclick="window.open('report21-20.html', '_blank')">
-<div class="img">
-    <img src="images/icon/pdf.png" alt="PDF Icon">
-</div>
-<div class="detail">
-<p>
-    2021 - 2022
-</p>
-</div>
-</div>
-<div class="reports" onclick="window.open('report20-21.html', '_blank')">
-<div class="img">
-    <img src="images/icon/pdf.png" alt="PDF Icon">
-</div>
-<div class="detail">
-<p>
-    2020 - 2021
-</p>
-</div>
-</div>
-<div class="reports" onclick="window.open('report17-18.html', '_blank')">
-<div class="img">
-    <img src="images/icon/pdf.png" alt="PDF Icon">
-</div>
-<div class="detail">
-<p>
-    2017 - 2018
-</p>
-</div>
-</div>
-<div class="reports" onclick="window.open('report16-17.html', '_blank')">
-<div class="img">
-    <img src="images/icon/pdf.png" alt="PDF Icon">
-</div>
-<div class="detail">
-<p>
-    2016 - 2017
-</p>
-</div>
-</div>
-<div class="reports" onclick="window.open('report15-16.html', '_blank')">
-<div class="img">
-    <img src="images/icon/pdf.png" alt="PDF Icon">
-</div>
-<div class="detail">
-<p>
-    2015 - 2016
-</p>
-</div>
-</div>
-<div class="reports" onclick="window.open('report14-15.html', '_blank')">
-<div class="img">
-    <img src="images/icon/pdf.png" alt="PDF Icon">
-</div>
-<div class="detail">
-<p>
-    2014 - 2015
-</p>
-</div>
-</div>
+                <div class="reports" onclick="window.open('pdf/investor/announcement/AnnualReport2022-21.pdf', '_blank')">
+
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            2022 - 2023
+                        </p>
+                    </div>
                 </div>
-    </div>
-</div>
-<div class="customer-content" style="position: relative; flex-direction: column; background-color: white;  align-items: start; margin-top: 50px;">
-    <div class="sec1" style="position: relative; justify-content: start;">
-        <p style="color: #044697;">Board Of Directors <span></span></p>
-        <h2>Meet Our Directors</h2>
-    </div>
- 
-    <div id="owl-demo2" class="owl-carousel">
-        <div class="allitem">
-            <div class="blog-allof" style="border: none ; background-image: url(images/directors/ramachandran.jpg);" id="director" >
-                <div class="view">
-                    <i class="fas fa-eye"></i>
+                <div class="reports" onclick="window.open('pdf/investor/announcement/AnnualReport-2021-22.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            2021 - 2022
+                        </p>
+                    </div>
                 </div>
-                <div class="name" >
-                    <p>
-                      Ramachandran Ottapathu
-                    </p>
-                    <p>
-                        Chairman 
-                    </p>
+                <div class="reports" onclick="window.open('pdf/investor/announcement/AnnualReport-2020-21.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            2020 - 2021
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/announcement/Yogloans-AnnualReport2017-2018.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            2017 - 2018
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/announcement/AnnualReport2016-17.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            2016 - 2017
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/announcement/AnnualReport2015-16.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            2015 - 2016
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/announcement/AnnualReport-2014-15.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            2014 - 2015
+                        </p>
+                    </div>
                 </div>
             </div>
-           <!--  <div class="blog-allof">
+            <div class="announcements">
+
+
+
+
+                <div class="reports" onclick="window.open('pdf/investor/annual/egm.pdf', '_blank')">
+
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+
+
+                            EGM Notice
+
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/annual/33rdScrutinizerReport.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            33rdScrutinizerReport
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/annual/33rdAGMNotice.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            33rdAGMNotice
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/annual/ScrutinizerReportSummary2023.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            ScrutinizerReportSummary2023
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/annual/32ndScrutinizerReport.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            32nd Scrutinizer Report
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/annual/32ndAGMNotice.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            32nd AGM Notice
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/annual/ScrutinizerReportSummary2023.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            EGM Scrutinizer Summary Report 15th March 2023
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/annual/31stAGMNotice2021-2022.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            31st AGM Notice 2021-2022
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="investors-conatct">
+                <div class="investors-conatct-content">
+                    <div class="card">
+                        <div class="top">
+                            <div class="image">
+                                <img src="images/directors/rajesh.jpg" alt="" srcset="">
+                            </div>
+                            <div class="name">
+                                <h2>
+                                    Mr.Rajesh Kumar.K Pillai
+                                </h2>
+                                <p>
+                                    EVP& Company Secretary </p>
+                            </div>
+                        </div>
+                        <div class="address">
+                            <p style="color: black;">Yogakshemam Loans Ltd </p>
+                            <p style="color: black;">3rd Floor , Ottappath Tower </p>
+                            <p style="color: black;">Aswini Junction,Thrissur, Kerala-680022 </p>
+                            <p style="color: black;">Phone - 0487 2320102/103 Mob - 9495551922 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="public-disclosure">
+
+
+
+
+                <div class="reports" onclick="window.open('pdf/investor/publicdis/LiquidityRiskasonjune302021.pdf', '_blank')">
+
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+
+
+                            Liquidity Risk as on June 30 2021.
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-for-tds">
+
+
+
+
+                <div class="reports" onclick="window.open('pdf/investor/forms/tds.pdf', '_blank')">
+
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+
+
+                            Applicable Tax Deduction at Source (TDS)
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/forms/FORM15G.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            FORM 15G
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/forms/FORM15H.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            FORM 15H
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/forms/FORM10F.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            FORM 10F
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/forms/ResidentTaxDeclaration.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            Resident Tax Declaration
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/forms/Non-ResidentTaxDeclaration.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            Non-Resident Tax Declaration
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/forms/SelfDeclarationforavailmentofTreatyBenefit.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            Self Declaration for availment of Treaty Benefit
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/forms/JointShareholdersDeclaration.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            Joint Shareholders' Declaration
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/forms/DeclarationUnderRule37BC.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            Declaration Under Rule 37BC
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="unpaid-divident">
+                <div class="unpaid-divident-content">
+                    <p style="color: black;">No Data</p>
+                </div>
+            </div>
+
+            <div class="appointment-order">
+
+
+
+
+                <div class="reports" onclick="window.open('pdf/investor/appoi/anoopg.pdf', '_blank')">
+
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+
+
+                            Mr. Anoop G
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/appoi/Pushpangadan.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            Mr. Pushpangadan M
+                        </p>
+                    </div>
+                </div>
+                <div class="reports" onclick="window.open('pdf/investor/appoi/SantoshKurup.pdf', '_blank')">
+                    <div class="img">
+                        <img src="images/icon/pdf.png" alt="PDF Icon">
+                    </div>
+                    <div class="detail">
+                        <p>
+                            Mr. Santosh Kurup
+                        </p>
+                    </div>
+                </div>
+               
+                
+            </div>
+            <div class="digital-lending-partners">
+                <div class="digital-lending-partners-content">
+                    <div class="card">
+                        <div class="top">
+                            <div class="image">
+                                <img src="user.png" alt="" srcset="">
+                            </div>
+                            <div class="name">
+                                <h2>
+                                    Dhan Sethu DigiFin Private Limited 
+                                </h2>
+                             <!--    <p>
+                                    EVP& Company Secretary </p> -->
+                            </div>
+                        </div>
+                        <div class="address">
+                        <p style="color: black;">Yogakshemam Loans Ltd </p>
+                        <p style="color: black;">Kerala Technology Innovation Zone, Kinfra Hi-Tech Park Main Rd</p>
+                        <p style="color: black;">HMT Colony P.O., Kalamassery, Kochi, Kerala- 683503  </p>
+                     <!--    <p>Phone - 0487 2320102/103 Mob - 9495551922 </p> -->
+                     <p style="color: black;">Product : Micro Loan </p>
+                     <p style="color: black;">Website : www.svadhan.com</p>
+                    </div>
+                    </div>
+                </div>
+               </div>
+        </div>
+    </div>
+    <div class="customer-content"
+        style="position: relative; flex-direction: column; background-color: white;  align-items: start; margin-top: 50px;">
+        <div class="sec1" style="position: relative; justify-content: start;">
+            <p style="color: #044697;">Board Of Directors <span></span></p>
+            <h2>Meet Our Directors</h2>
+        </div>
+
+        <div id="owl-demo2" class="owl-carousel">
+            <div class="allitem">
+                <div class="blog-allof" style="border: none ; background-image: url(images/directors/ramachandran.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            Ramachandran Ottapathu
+                        </p>
+                        <p>
+                            Chairman
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="blog-allof">
                 <div class="name" style="display: flex;">
                     <p>Sarah</p>
                     <img src="about-3-1.png" alt="">
@@ -926,22 +1630,23 @@ width: 100%;
                     </p>
                 </div>
             </div> -->
-        </div>
-        <div class="allitem">
-             <div class="blog-allof" style="border: none; background-image: url(images/directors/unnikrishnan.jpg);" id="director" >
-                <div class="view">
-                    <i class="fas fa-eye"></i>
+            </div>
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/unnikrishnan.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            Unnikrishnan I
+                        </p>
+                        <p>
+                            Managing Director
+                        </p>
+                    </div>
                 </div>
-                <div class="name" >
-                    <p>
-                        Unnikrishnan I
-                    </p>
-                    <p>
-                        Managing Director 
-                    </p>
-                </div>
-                </div>
-            <!-- <div class="blog-allof">
+                <!-- <div class="blog-allof">
                 <div class="name" style="display: flex;">
                     <p>Michael</p>
                     <img src="about-3-1.png" alt="">
@@ -952,22 +1657,24 @@ width: 100%;
                     </p>
                 </div>
             </div> -->
-        </div>
-        <div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/santosh.jpg);" id="director">
-                <div class="view">
-                    <i class="fas fa-eye" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></i>
+            </div>
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/santosh.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModal"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            Santosh Kurup
+                        </p>
+                        <p>
+                            Independent Director
+                        </p>
+                    </div>
                 </div>
-                <div class="name" >
-                    <p>
-                        Santosh Kurup
-                    </p>
-                    <p>
-                        Independent Director 
-                    </p>
-                </div>
-                </div>
-           <!--  <div class="blog-allof">
+                <!--  <div class="blog-allof">
                 <div class="name" style="display: flex;">
                     <p>Emma</p>
                     <img src="about-3-1.png" alt="">
@@ -978,230 +1685,240 @@ width: 100%;
                     </p>
                 </div>
             </div> -->
+            </div>
+
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/vijayan.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            N D Vijayan
+                        </p>
+                        <p>
+                            Non-Executive Director
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>David</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        The interest rates are very competitive. Will definitely use again!
+                    </p>
+                </div>
+            </div> -->
+            </div>
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/unnirajan.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            P.N.Unnirajan
+                        </p>
+                        <p>
+                            Non-Executive Director
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>David</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        The interest rates are very competitive. Will definitely use again!
+                    </p>
+                </div>
+            </div> -->
+            </div>
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/Mohandas.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            Mohandas Anchery
+                        </p>
+                        <p>
+                            Independent Director
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>David</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        The interest rates are very competitive. Will definitely use again!
+                    </p>
+                </div>
+            </div> -->
+            </div>
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/Silpa.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            Silpa Ramdas
+                        </p>
+                        <p>
+                            Independent Director
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="blog-allof">
+                <div class="name" style="display: flex;">
+                    <p>David</p>
+                    <img src="about-3-1.png" alt="">
+                </div>
+                <div class="discretion-blog">
+                    <p id="message">
+                        The interest rates are very competitive. Will definitely use again!
+                    </p>
+                </div>
+            </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="customer-content"
+        style="position: relative; flex-direction: column; background-color: white;  align-items: start; margin-top: 50px;">
+        <div class="sec1" style="position: relative; justify-content: start;">
+            <p style="color: #044697;">Senior Management Team <span></span></p>
+            <h2>Meet Our Leadership</h2>
         </div>
 
-        <div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/vijayan.jpg);" id="director" >
-                <div class="view">
-                    <i class="fas fa-eye"></i>
+        <div id="owl-demo3" class="owl-carousel">
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/Rajeshkumar.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            Rajeshkumar.K
+                        </p>
+                        <p>
+                            EVP & Company Secretary
+                        </p>
+                    </div>
                 </div>
-                <div class="name" >
-                    <p>
-                        N D Vijayan
-                    </p>
-                    <p>
-                        Non-Executive Director 
-                    </p>
+            </div>
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/Sreenivas.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            K.K.Sreenivas
+                        </p>
+                        <p>
+                            VP-Credit & Branch Operations
+                        </p>
+                    </div>
                 </div>
+            </div>
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/prasad.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            Prasad.P
+                        </p>
+                        <p>
+                            Chief Financial Officer
+                        </p>
+                    </div>
                 </div>
-           <!--  <div class="blog-allof">
-                <div class="name" style="display: flex;">
-                    <p>David</p>
-                    <img src="about-3-1.png" alt="">
+            </div>
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/Shaju.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            Shaju K Balan
+                        </p>
+                        <p>
+                            Assistant Vice President -
+                            Business Development
+                        </p>
+                    </div>
                 </div>
-                <div class="discretion-blog">
-                    <p id="message">
-                        The interest rates are very competitive. Will definitely use again!
-                    </p>
+            </div>
+            <div class="allitem">
+                <div class="blog-allof" style="border: none; background-image: url(images/directors/rakesh.jpg);"
+                    id="director">
+                    <div class="view">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="name">
+                        <p>
+                            Rakesh K Venugopal
+                        </p>
+                        <p>
+                            Assistant Vice President -
+                            Business Head - Two-Wheeler
+                            Loans
+                        </p>
+                    </div>
                 </div>
-            </div> -->
-        </div>
-<div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/unnirajan.jpg);" id="director" >
-                <div class="view">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="name" >
-                    <p>
-                        P.N.Unnirajan
-                    </p>
-                    <p>
-                        Non-Executive Director 
-                    </p>
-                </div>
-                </div>
-           <!--  <div class="blog-allof">
-                <div class="name" style="display: flex;">
-                    <p>David</p>
-                    <img src="about-3-1.png" alt="">
-                </div>
-                <div class="discretion-blog">
-                    <p id="message">
-                        The interest rates are very competitive. Will definitely use again!
-                    </p>
-                </div>
-            </div> -->
-        </div>
-        <div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/Mohandas.jpg);" id="director" >
-                <div class="view">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="name" >
-                    <p>
-                        Mohandas Anchery
-                    </p>
-                    <p>
-                        Independent Director 
-                    </p>
-                </div>
-                </div>
-           <!--  <div class="blog-allof">
-                <div class="name" style="display: flex;">
-                    <p>David</p>
-                    <img src="about-3-1.png" alt="">
-                </div>
-                <div class="discretion-blog">
-                    <p id="message">
-                        The interest rates are very competitive. Will definitely use again!
-                    </p>
-                </div>
-            </div> -->
-        </div>
-        <div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/Silpa.jpg);" id="director" >
-                <div class="view">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="name" >
-                    <p>
-                        Silpa Ramdas
-                    </p>
-                    <p>
-                        Independent Director 
-                    </p>
-                </div>
-                </div>
-           <!--  <div class="blog-allof">
-                <div class="name" style="display: flex;">
-                    <p>David</p>
-                    <img src="about-3-1.png" alt="">
-                </div>
-                <div class="discretion-blog">
-                    <p id="message">
-                        The interest rates are very competitive. Will definitely use again!
-                    </p>
-                </div>
-            </div> -->
+            </div>
         </div>
     </div>
-</div>
+    <div class="credit-rating">
+        <div class="credit-rating-content">
+            <div class="header">
+                <h3>Credit Rating & NBFC Registration</h3>
+            </div>
+            <div class="body">
+                <div class="card">
+                    <div class="image">
+                        <img src="images/crisil.jpg" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <p style="text-transform: capitalize; color: black;">Rating </p>
+                        <p style="text-transform: uppercase; color: black;">BBB ( - )</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="images/rbi.jpg" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <p style="color: black;">WE HAVE BEEN REGISTERED AS NBFC WITH RBI SINCE 2000</p>
+                        <!--     <p>BBB ( - )</p> -->
+                    </div>
+                </div>
+            </div>
 
-<div class="customer-content" style="position: relative; flex-direction: column; background-color: white;  align-items: start; margin-top: 50px;">
-    <div class="sec1" style="position: relative; justify-content: start;">
-        <p style="color: #044697;">Senior Management Team <span></span></p>
-        <h2>Meet Our Leadership</h2>
-    </div>
- 
-    <div id="owl-demo3" class="owl-carousel">
-        <div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/Rajeshkumar.jpg);" id="director">
-                <div class="view">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="name" >
-                    <p>
-                        Rajeshkumar.K
-                    </p>
-                    <p>
-                        EVP & Company Secretary 
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/Sreenivas.jpg);" id="director">
-                <div class="view">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="name" >
-                    <p>
-                        K.K.Sreenivas 
-                    </p>
-                    <p>
-                        VP-Credit & Branch Operations 
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/prasad.jpg);" id="director">
-                <div class="view">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="name" >
-                    <p>
-                        Prasad.P
-                    </p>
-                    <p>
-                        Chief Financial Officer 
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/Shaju.jpg);" id="director">
-                <div class="view">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="name" >
-                    <p>
-                        Shaju K Balan
-                    </p>
-                    <p>
-                        Assistant Vice President -
-                        Business Development
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="allitem">
-            <div class="blog-allof" style="border: none; background-image: url(images/directors/rakesh.jpg);" id="director">
-                <div class="view">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="name" >
-                    <p>
-                        Rakesh K Venugopal
-                    </p>
-                    <p>
-                        Assistant Vice President -
-                        Business Head - Two-Wheeler
-                        Loans
-                    </p>
-                </div>
-            </div>
         </div>
     </div>
-</div>
-<div class="credit-rating">
-    <div class="credit-rating-content">
-        <div class="header">
-            <h3>Credit Rating & NBFC Registration</h3>
-        </div>
-     <div class="body">
-        <div class="card">
-            <div class="image">
-                <img src="images/crisil.jpg" alt="" srcset="">
-            </div>
-            <div class="content">
-                <p style="text-transform: capitalize; color: black;">Rating </p>
-                <p style="text-transform: uppercase; color: black;">BBB ( - )</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image">
-                <img src="images/rbi.jpg" alt="" srcset="">
-            </div>
-            <div class="content">
-                <p style="color: black;">WE HAVE BEEN REGISTERED AS NBFC WITH RBI SINCE 2000</p>
-            <!--     <p>BBB ( - )</p> -->
-            </div>
-        </div>
-     </div>
-     
-</div>
-</div> 
     <footer class="footer-section">
         <div class="container">
             <!-- <div class="footer-cta pt-5 pb-5">
@@ -1320,9 +2037,9 @@ width: 100%;
         </div>
     </footer>
 
- <script>
-    
-    var owl2 = $("#owl-demo2");
+    <script>
+
+        var owl2 = $("#owl-demo2");
         owl2.owlCarousel({
             loop: true,
             margin: 20,
@@ -1373,13 +2090,13 @@ width: 100%;
                 }
             }
         });
-        
+
 
         // Director bios
         const bio = {
             'Ramachandran Ottapathu': "Mr. Ramachandran Ottapathu is a Chartered Accountant and a fellow member of ICAI, an Associate member of Botswana Institute of Accountants, and a certified SAP consultant. He has about 25 years of vast experience in the retail industry - handling both finance and operations. He is also an expert in areas such as Manufacturing, Packaging, Milling, and Medical distribution. He is presently serving as the Chief Executive Officer of Choppies Enterprises Ltd., a retail chain headquartered at Gaborone, Botswana, and has 246 stores spread across Botswana, South Africa, Zambia, Zimbabwe, Namibia, and Mozambique. Choppies Enterprises Ltd. is listed on the Botswana Stock Exchange and has a secondary listing on the Johannesburg Stock Exchange, Africa's biggest Stock Exchange. This company has bagged a turnover of about $ 1 Billion and is one of the biggest retailers in the continent. He has more than 50 business enterprises under his stewardship and was featured in Forbes Magazine (Forbes - Africa edition Mar 16). ",
             'Unnikrishnan I': "A fellow member of The Institute of Chartered Accountants of India (ICAI) Mr. Unnikrishnan served on the board of Manappuram Finance Limited for 18 years starting 1997 and was one of the core team members who built that organization. He exited from the company in November 2014 as the Dy.CEO to join Yogakshemam. With a whopping 30 years of experience in advising and managing NBFCs, he is credited with bringing the highest amount of FDI into the State of Kerala in a single tranche to the extent of Rs 1000 crores. He has also raised not less than Rs 30000 cores on a cumulative basis as working capital limits from various banks and financial institutions. He has written numerous articles and presented papers on NBFCs, financial inclusions, etc. on various forums, served on the Executive committee of the 'Finance Companies Association' and is one of the founding members of the 'Association of Gold Loan Companies India'. ",
-            'Santosh Kurup':" Mr.Santosh Kurup is a CAIIB from the Indian Institute of Bankers. He is a graduate in BA Economics (Hons.) from St.Stephen's College and pursued his Post Graduation in M.A from Delhi School of Economics and MBA from prestigious Stern School of Bussiness,New York University. He has got 3 decades of expertise in Banking, Asset management and Non- Banking Finance. With his rich and vast experience in corporate development and financial sector he has acted in various capacities in India and abroad. He has served RBI, Mumbai as Assistant General Manager from 1981 to 93. He was The Vice President of Emerging Markets,JP Morgan based in New York from 1993 to 1996, acted as Director of Emerging Markets, Old Mutual Plc. London and Mumbai from 1996 to 2002,worked as an Independent Consultant in India and UK for Edelweiss Bank Project, Edelweiss Financial Services and Pipal Research Corporation.Besides serving our board he is also the Director and substantial shareholder of M/s Kurup Services Pvt. Ltd., He is a reg ular blogger on Financial Market Research at www.santoshkurup.bIogspot.com. He has also shown his interest as a lecturer in economics at St. Stephen's College, University of Delhi from 1979 to 1981.",
+            'Santosh Kurup': " Mr.Santosh Kurup is a CAIIB from the Indian Institute of Bankers. He is a graduate in BA Economics (Hons.) from St.Stephen's College and pursued his Post Graduation in M.A from Delhi School of Economics and MBA from prestigious Stern School of Bussiness,New York University. He has got 3 decades of expertise in Banking, Asset management and Non- Banking Finance. With his rich and vast experience in corporate development and financial sector he has acted in various capacities in India and abroad. He has served RBI, Mumbai as Assistant General Manager from 1981 to 93. He was The Vice President of Emerging Markets,JP Morgan based in New York from 1993 to 1996, acted as Director of Emerging Markets, Old Mutual Plc. London and Mumbai from 1996 to 2002,worked as an Independent Consultant in India and UK for Edelweiss Bank Project, Edelweiss Financial Services and Pipal Research Corporation.Besides serving our board he is also the Director and substantial shareholder of M/s Kurup Services Pvt. Ltd., He is a reg ular blogger on Financial Market Research at www.santoshkurup.bIogspot.com. He has also shown his interest as a lecturer in economics at St. Stephen's College, University of Delhi from 1979 to 1981.",
             'N D Vijayan': "Mr. ND Vijayan is a Graduate in commerce with Diplomain Computer Application. Started his career in the year 1979 with Bank of Baroda, Abu Dhabi. Having served in various posts, ended the services with the organization as Current Account Manager in 1982 and joined with Arab Bank for Investment and Foreign Trade in 1983. He worked in the supervisory roles of almost again stall the internal departments during the course of service. With more than 30 odd years of service, took VRSin2011 asOperations-in-charge of IT department with an option to rejoin but decided not to. ",
             'P.N.Unnirajan': "Sri.PoiyakuIeth Nelambaran Unnirajan IPS (Rtd.)is a post graduate in history.He retired from the Kerala Police on superannuation on 30th June 2018 while working as the Superintendent of Police, Crime Branch CID Ernakulum range. He was inducted as a Sub- Inspector in Kerala Police in 1981. He was promoted as Circle Inspector of Police in 1994 and promoted as DYSP in 2001 and Superintendent of Police on March 2010. He has served as the Assistant Director, Kerala Police Academy, Thrissur, Superintendent of Police, Special Branch, Thrissur Range, Superintended Internal security (Intelligence) Thiruvanathapuram and held several responsible posts. He was also awarded with the PRESIDENTS POLICEMEDAL FOR MERITORIOUS SERVICE during the year 2017. He had compIetedhisP.G in Criminology and Police administration. ",
             'Mohandas Anchery': "Mr. Mohandas Anchery is Fellow member of the Institute of Chartered Accountants of India. He has become a Chartered Accountant in 1985 and since then he has built up a successful track record of more than 39 years as a Practicing Chartered Accountant with his expertise spanning in the field of accounting, finance, management, taxation and NBFC regulations. He is the Managing Partner of Mohandas & Associates, Chartered Accountants Thrissur. He has been associated with the financial service sector in various capacities like audit of Banks, NBFCs, Nidhi companies, Chits and Kuries in the capacity of auditor as well as advisor. ",
@@ -1396,7 +2113,7 @@ width: 100%;
         };
 
         // Modal functionality for both directors and management
-        $('.view').click(function() {
+        $('.view').click(function () {
             const card = $(this).closest('.blog-allof');
             const name = card.find('.name p:first').text().trim();
             const position = card.find('.name p:last').text().trim();
@@ -1405,7 +2122,7 @@ width: 100%;
             $('#modalDirectorName').text(name);
             $('#modalDirectorPosition').text(position);
             $('#modalDirectorImage').attr('src', image);
-            
+
             // Check both bio objects
             if (bio[name]) {
                 $('#modalDirectorBio').text(bio[name]);
@@ -1413,12 +2130,12 @@ width: 100%;
                 $('#modalDirectorBio').text(managementBio[name]);
             } else {
                 // Try to find a matching name (case-insensitive)
-                const matchingName = Object.keys(bio).find(key => 
+                const matchingName = Object.keys(bio).find(key =>
                     key.toLowerCase() === name.toLowerCase()
-                ) || Object.keys(managementBio).find(key => 
+                ) || Object.keys(managementBio).find(key =>
                     key.toLowerCase() === name.toLowerCase()
                 );
-                
+
                 if (matchingName) {
                     $('#modalDirectorBio').text(bio[matchingName] || managementBio[matchingName]);
                 } else {
@@ -1426,12 +2143,94 @@ width: 100%;
                     $('#modalDirectorBio').text('No biography available.');
                 }
             }
-            
+
             // Update to Bootstrap 5 modal initialization
             const directorModal = new bootstrap.Modal('#directorModal');
             directorModal.show();
         });
- </script>
+    </script>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+    var annualreport  = document.getElementById('annual-report');
+    var announcements = document.getElementById('announcements');
+    var investor = document.getElementById('investor');
+    var public =document.getElementById('public');
+    var forms = document.getElementById('forms');
+    var unpaid = document.getElementById('unpaid');
+    var appointmnet = document.getElementById('appointmnet');
+    var digital = document.getElementById('digital');
+
+    // Get all content sections
+    var contentSections = document.querySelectorAll('.other > div');
+
+    // Function to hide all content sections
+    function hideAllContent() {
+        contentSections.forEach(function(section) {
+            section.classList.remove('active');
+        });
+    }
+
+    // Function to remove active class from all list items
+    function removeAllActive() {
+        annualreport.classList.remove('active');
+        announcements.classList.remove('active');
+        investor.classList.remove('active');
+        public.classList.remove('active');
+        forms.classList.remove('active');
+        unpaid.classList.remove('active');
+        appointmnet.classList.remove('active');
+        digital.classList.remove('active');
+    }
+
+    annualreport.onclick=function(){
+        removeAllActive();
+        hideAllContent();
+        annualreport.classList.add('active');
+        document.querySelector('.annual-report-content').classList.add('active');
+    }
+    announcements.onclick= function(){
+        removeAllActive();
+        hideAllContent();
+        announcements.classList.add('active');
+        document.querySelector('.announcements').classList.add('active');
+    }
+    investor.onclick=function(){
+        removeAllActive();
+        hideAllContent();
+        investor.classList.add('active');
+        document.querySelector('.investors-conatct').classList.add('active');
+    }
+    public.onclick=function(){
+        removeAllActive();
+        hideAllContent();
+        public.classList.add('active');
+        document.querySelector('.public-disclosure').classList.add('active');
+    }
+    forms.onclick= function(){
+        removeAllActive();
+        hideAllContent();
+        forms.classList.add('active');
+        document.querySelector('.form-for-tds').classList.add('active');
+    }
+    unpaid.onclick= function(){
+        removeAllActive();
+        hideAllContent();
+        unpaid.classList.add('active');
+        document.querySelector('.unpaid-divident').classList.add('active');
+    }
+    appointmnet.onclick= function(){
+        removeAllActive();
+        hideAllContent();
+        appointmnet.classList.add('active');
+        document.querySelector('.appointment-order').classList.add('active');
+    }
+    digital.onclick= function(){
+        removeAllActive();
+        hideAllContent();
+        digital.classList.add('active');
+        document.querySelector('.digital-lending-partners').classList.add('active');
+    }
+</script>
 </html>

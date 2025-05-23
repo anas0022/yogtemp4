@@ -171,6 +171,14 @@ justify-content: end;
     }
 </style>
 <body>
+          <!-- Preloader -->
+          <div class="loader-mask">
+            <div class="loader">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    <!-- Preloader -->
     <menu>
         <div class="menu-container">
             <img src="images/logo/logo.png" alt="" srcset="">
@@ -481,6 +489,14 @@ Eligible customers can avail finance up to the full on-road price, along with fl
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $(window).on('load', function() {
+    // Preloader
+    $('.loader').fadeOut();
+    $('.loader-mask').delay(350).fadeOut('slow');
+});
+    </script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const servicesLink = document.querySelector('.services-link');
     const servicesList = document.querySelector('.service-list');
@@ -42,3 +41,9 @@ menu.onclick= function(){
 close.onclick= function(){
     res.style.height='0px ';
 }
+
+$(window).on('load', function() {
+    // Preloader
+    $('.loader').fadeOut();
+    $('.loader-mask').delay(350).fadeOut('slow');
+});
