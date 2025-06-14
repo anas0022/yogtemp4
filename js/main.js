@@ -36,7 +36,7 @@ var menu = document.getElementById('menu');
 var close = document.getElementById('close');
 var res= document.getElementById('res-menu');
 menu.onclick= function(){
-    res.style.height='600px ';
+    res.style.height='100%  ';
 }
 close.onclick= function(){
     res.style.height='0px ';
