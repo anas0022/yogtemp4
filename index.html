@@ -363,7 +363,7 @@
             welcome.style.backgroundImage = "url(images/welcome/cdloan.png)";
             detail.textContent = " ";
             point1.innerHTML = `<img src="images/icon/checklist.png" alt="" srcset=""> Low interest rate. `;
-          /*   point2.innerHTML = `<img src="images/icon/checklist.png" alt="" srcset=""> Unsecured upto Rs.200000 for eligible customers`; */
+            point2.style.display = "none";
             point3.style.display = "none";
         }
         vehicle.onclick = function () {
@@ -377,7 +377,7 @@
             detail.textContent = "A Vehicle Loan is a convenient and secure way to access instant funds by pledging your vehicle as collateral. With minimal documentation and quick processing, it is an ideal solution for urgent financial needs such as business expansion, medical emergencies, or education expenses. The loan amount is determined based on the value of the vehicle, offering competitive interest rates and flexible repayment options to suit your needs.  ";
             point1.innerHTML = `<img src="images/icon/checklist.png" alt="" srcset=""> Low interest rate. `;
             point3.style.display = "block";
-/*             point2.innerHTML = `<img src="images/icon/checklist.png" alt="" srcset=""> Loan amount upto Rs.200000. `; */
+            point2.style.display = "none";
             point3.innerHTML = `<img src="images/icon/checklist.png" alt="" srcset="">Maximum duration 48 month. `;
         }
     </script>
