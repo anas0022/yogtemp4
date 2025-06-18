@@ -9,43 +9,60 @@
     <link rel="stylesheet" href="css/home.css">
 
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f7f8fa; margin: 0; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background: #f8f9fa; 
+            margin: 0; 
+            color: #2c3e50;
+        }
         .main-content {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         .hero-career {
-            background: url('images/welcome/career.png') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/welcome/career.png') center/cover no-repeat;
             color: #fff;
-            padding: 80px 0 60px 0;
+            padding: 120px 0 80px 0;
             text-align: center;
             position: relative;
         }
-        .hero-career::after{
-            content: "";
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            position: absolute;
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.316);
+        .hero-career h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            z-index: 2; 
+            position: relative;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        .hero-career h1 { font-size: 3rem; margin-bottom: 10px; z-index: 2; position: relative; }
-        .hero-career p { font-size: 1.3rem; margin-bottom: 30px; text-align: center;}
+        .hero-career p { 
+            font-size: 1.4rem; 
+            margin-bottom: 35px; 
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
         .cta-btn {
             background: #0056b3;
             color: #fff;
-            padding: 15px 40px;
+            padding: 16px 45px;
             border: none;
-            border-radius: 30px;
+            border-radius: 50px;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: background 0.2s;
-            z-index: 2; position: relative;
+            transition: all 0.3s ease;
+            z-index: 2;
+            position: relative;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,86,179,0.3);
         }
-        .cta-btn:hover { background: #003d80; }
+        .cta-btn:hover { 
+            background: #003d80;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,86,179,0.4);
+        }
         .why-work {
             background: #fff;
             padding: 60px 0 50px 0;
@@ -73,97 +90,225 @@
         .why-icon img { width: 48px; margin-bottom: 15px; }
         .why-icon h4 { margin: 10px 0 8px 0; font-size: 1.1rem; }
         .job-section {
-            padding: 60px 0 40px 0;
-            background: #f7f8fa;
+            padding: 80px 0 60px 0;
+            background: #f8f9fa;
         }
-        .job-section h2 { text-align: center; font-size: 2rem; margin-bottom: 35px; }
+        .job-section h2 { 
+            text-align: center; 
+            font-size: 2.5rem; 
+            margin-bottom: 50px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
         .jobs-grid {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            justify-content: center;
-            margin: 0 auto;
-         /*    max-width: 900px; */
+            padding: 0 20px;
         }
         .job-card {
             background: #fff;
-            border-radius: 14px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            padding: 28px 22px;
-            width: 320px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 30px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
         }
-        .job-card h3 { margin: 0 0 10px 0; font-size: 1.3rem; }
-        .job-card p { margin: 0 0 8px 0; color: #444; }
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .job-card h3 { 
+            margin: 0 0 15px 0; 
+            font-size: 1.4rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .job-card p { 
+            margin: 0 0 12px 0; 
+            color: #5c6c7c;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
         .job-card .apply-btn {
-            margin-top: 15px;
+            margin-top: 20px;
             background: #0056b3;
             color: #fff;
             border: none;
-            border-radius: 20px;
-            padding: 8px 22px;
+            border-radius: 25px;
+            padding: 10px 25px;
             cursor: pointer;
             font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
-        .job-card .apply-btn:hover { background: #003d80; }
+        .job-card .apply-btn:hover { 
+            background: #003d80;
+            transform: translateY(-2px);
+        }
         .application-section {
             background: #fff;
-            padding: 60px 0 50px 0;
+            padding: 80px 0 60px 0;
             text-align: center;
         }
-        .application-section h2 { font-size: 2rem; margin-bottom: 25px; }
-        .application-form {
-          /*   max-width: 420px; */
-            margin: 0 auto;
-            background: #f7f8fa;
-            padding: 35px 30px;
-            border-radius: 14px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .application-section h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 40px;
+            color: #2c3e50;
+            font-weight: 700;
         }
-        .application-form input, .application-form textarea {
+        .application-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .application-form input, 
+        .application-form textarea {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 18px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            padding: 14px 20px;
+            margin-bottom: 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
             font-size: 1rem;
+            transition: all 0.3s ease;
+            color: #2c3e50;
+        }
+        .application-form input:focus, 
+        .application-form textarea:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 0 3px rgba(0,86,179,0.1);
         }
         .application-form button {
             background: #0056b3;
             color: #fff;
             border: none;
-            border-radius: 20px;
-            padding: 12px 35px;
-            font-size: 1rem;
+            border-radius: 25px;
+            padding: 14px 40px;
+            font-size: 1.1rem;
             cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
         }
-        .application-form button:hover { background: #003d80; }
+        .application-form button:hover { 
+            background: #003d80;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,86,179,0.3);
+        }
         .faq-section {
-            background: #f7f8fa;
-            padding: 60px 0 50px 0;
+            background: #f8f9fa;
+            padding: 80px 0 60px 0;
         }
-        .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 35px; }
+        .faq-section h2 { 
+            text-align: center; 
+            font-size: 2.5rem; 
+            margin-bottom: 50px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
         .faq-list {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
+            padding: 0 20px;
         }
         .faq-item {
             background: #fff;
-            border-radius: 10px;
-            margin-bottom: 18px;
-            padding: 22px 26px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-radius: 16px;
+            margin-bottom: 25px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
         }
-        .faq-item h4 { margin: 0 0 8px 0; font-size: 1.1rem; }
-        .faq-item p { margin: 0; color: #444; }
-        @media (max-width: 900px) {
-            .why-icons, .jobs-grid { flex-direction: column; align-items: center; }
-            .main-content { padding: 0 8px; }
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+        }
+        .faq-item h4 { 
+            margin: 0 0 12px 0; 
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .faq-item p { 
+            margin: 0; 
+            color: #5c6c7c;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .hero-career h1 {
+                font-size: 2.5rem;
+            }
+            .hero-career p {
+                font-size: 1.2rem;
+            }
+            .filter-container {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0 20px;
+            }
+            .filter-group select {
+                width: 100%;
+            }
+            .jobs-grid {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+            .application-form {
+                padding: 30px 20px;
+            }
+            .faq-section h2,
+            .application-section h2,
+            .job-section h2 {
+                font-size: 2rem;
+            }
+        }
+        .filter-section {
+            background: #fff;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 200px;
+        }
+        .filter-group label {
+            font-size: 0.95rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .filter-group select {
+            padding: 12px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #2c3e50;
+        }
+        .filter-group select:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 0 3px rgba(0,86,179,0.1);
         }
     </style>
 </head>
@@ -242,57 +387,117 @@
     </div>
 </section>
 
-<!-- <section class="why-work">
+<section class="filter-section">
     <div class="main-content">
-        <h2>Why Work With Us?</h2>
-        <div class="why-icons">
-            <div class="why-icon">
-                <img src="images/icon/growth.png" alt="Growth">
-                <h4>Career Growth</h4>
-                <p>Opportunities to learn, grow, and advance in your career.</p>
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="location">Location</label>
+                <select id="location" onchange="filterJobs()">
+                    <option value="all">All Locations</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Karnataka">Karnataka</option>
+                </select>
             </div>
-            <div class="why-icon">
-                <img src="images/icon/teamwork.png" alt="Teamwork">
-                <h4>Collaborative Culture</h4>
-                <p>Work with a supportive and dynamic team.</p>
+            <div class="filter-group">
+                <label for="experience">Experience</label>
+                <select id="experience" onchange="filterJobs()">
+                    <option value="all">All Experience Levels</option>
+                    <option value="1-3">1-3 Years</option>
+                    <option value="3-5">3-5 Years</option>
+                    <option value="5+">5+ Years</option>
+                </select>
             </div>
-            <div class="why-icon">
-                <img src="images/icon/benefits.png" alt="Benefits">
-                <h4>Great Benefits</h4>
-                <p>Competitive salary, health insurance, and more.</p>
+            <div class="filter-group">
+                <label for="jobType">Job Type</label>
+                <select id="jobType" onchange="filterJobs()">
+                    <option value="all">All Types</option>
+                    <option value="Full Time">Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Contract">Contract</option>
+                </select>
             </div>
-          <div class="why-icon">
-                <img src="images/icon/flexibility.png" alt="Flexibility">
-                <h4>Work-Life Balance</h4>
-                <p>Flexible work options to suit your lifestyle.</p>
+            <div class="filter-group">
+                <label for="category">Job Category</label>
+                <select id="category" onchange="filterJobs()">
+                    <option value="all">All Categories</option>
+                    <option value="HR">HR</option>
+                    <option value="P&A">P&A</option>
+                    <option value="Reception">Reception</option>
+                    <option value="Accounts">Accounts</option>
+                    <option value="B&D">B&D</option>
+                </select>
             </div>
         </div>
     </div>
 </section>
- -->
+
 <section class="job-section">
     <div class="main-content">
         <h2>Open Positions</h2>
         <div class="jobs-grid">
-            <div class="job-card">
-                <h3>Senior Software Engineer</h3>
+            <div class="job-card" data-category="HR">
+                <h3>HR Manager</h3>
+                <p><b>Location:</b> Kerala</p>
+                <p><b>Experience:</b> 5-7 Years</p>
+                <p><b>Type:</b> Full Time</p>
+                <p><b>Category:</b> HR</p>
+                <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
+            </div>
+            <div class="job-card" data-category="HR">
+                <h3>HR Executive</h3>
+                <p><b>Location:</b> Tamil Nadu</p>
+                <p><b>Experience:</b> 2-4 Years</p>
+                <p><b>Type:</b> Full Time</p>
+                <p><b>Category:</b> HR</p>
+                <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
+            </div>
+            <div class="job-card" data-category="P&A">
+                <h3>Administrative Officer</h3>
                 <p><b>Location:</b> Kerala</p>
                 <p><b>Experience:</b> 3-5 Years</p>
                 <p><b>Type:</b> Full Time</p>
+                <p><b>Category:</b> P&A</p>
                 <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
             </div>
-            <div class="job-card">
-                <h3>Financial Analyst</h3>
-                <p><b>Location:</b> Tamil Nadu</p>
+            <div class="job-card" data-category="Reception">
+                <h3>Front Desk Executive</h3>
+                <p><b>Location:</b> Karnataka</p>
                 <p><b>Experience:</b> 1-3 Years</p>
                 <p><b>Type:</b> Full Time</p>
+                <p><b>Category:</b> Reception</p>
                 <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
             </div>
-            <div class="job-card">
-                <h3>Office Staff</h3>
-                <p><b>Location:</b> Karnataka</p>
-                <p><b>Experience:</b> 5+ Years</p>
+            <div class="job-card" data-category="Accounts">
+                <h3>Senior Accountant</h3>
+                <p><b>Location:</b> Kerala</p>
+                <p><b>Experience:</b> 4-6 Years</p>
                 <p><b>Type:</b> Full Time</p>
+                <p><b>Category:</b> Accounts</p>
+                <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
+            </div>
+            <div class="job-card" data-category="Accounts">
+                <h3>Accounts Executive</h3>
+                <p><b>Location:</b> Tamil Nadu</p>
+                <p><b>Experience:</b> 2-4 Years</p>
+                <p><b>Type:</b> Full Time</p>
+                <p><b>Category:</b> Accounts</p>
+                <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
+            </div>
+            <div class="job-card" data-category="B&D">
+                <h3>Business Development Manager</h3>
+                <p><b>Location:</b> Kerala</p>
+                <p><b>Experience:</b> 5-8 Years</p>
+                <p><b>Type:</b> Full Time</p>
+                <p><b>Category:</b> B&D</p>
+                <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
+            </div>
+            <div class="job-card" data-category="B&D">
+                <h3>Business Development Executive</h3>
+                <p><b>Location:</b> Karnataka</p>
+                <p><b>Experience:</b> 2-4 Years</p>
+                <p><b>Type:</b> Full Time</p>
+                <p><b>Category:</b> B&D</p>
                 <button class="apply-btn" onclick="document.getElementById('application').scrollIntoView({behavior: 'smooth'});">Apply</button>
             </div>
         </div>
@@ -452,5 +657,33 @@
 </footer>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+function filterJobs() {
+    const location = document.getElementById('location').value;
+    const experience = document.getElementById('experience').value;
+    const jobType = document.getElementById('jobType').value;
+    const category = document.getElementById('category').value;
+    
+    const jobCards = document.querySelectorAll('.job-card');
+    
+    jobCards.forEach(card => {
+        const cardLocation = card.querySelector('p:nth-child(2)').textContent.split(':')[1].trim();
+        const cardExperience = card.querySelector('p:nth-child(3)').textContent.split(':')[1].trim();
+        const cardType = card.querySelector('p:nth-child(4)').textContent.split(':')[1].trim();
+        const cardCategory = card.querySelector('p:nth-child(5)').textContent.split(':')[1].trim();
+        
+        const locationMatch = location === 'all' || cardLocation === location;
+        const experienceMatch = experience === 'all' || cardExperience === experience;
+        const typeMatch = jobType === 'all' || cardType === jobType;
+        const categoryMatch = category === 'all' || cardCategory === category;
+        
+        if (locationMatch && experienceMatch && typeMatch && categoryMatch) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+</script>
 </body>
 </html>
